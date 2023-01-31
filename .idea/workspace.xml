@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="Bananaaa">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="Creazione matrice associata alla tabella grafica">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Paroliere/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/Main.java" afterDir="false" />
     </list>
@@ -64,7 +63,7 @@
       <workItem from="1674553078536" duration="1016000" />
       <workItem from="1674812505918" duration="3000" />
       <workItem from="1674822287689" duration="2087000" />
-      <workItem from="1675160945615" duration="400000" />
+      <workItem from="1675160945615" duration="855000" />
     </task>
     <task id="LOCAL-00001" summary="Banana">
       <created>1673952451063</created>
@@ -101,7 +100,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673954012392</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Creazione matrice associata alla tabella grafica">
+      <created>1675161409502</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1675161409502</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Creazione matrice associata alla tabella grafica">
+      <created>1675161617032</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1675161617032</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,6 +147,7 @@
     <MESSAGE value="Banana" />
     <MESSAGE value="Bananaaa" />
     <MESSAGE value="Add word to println" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add word to println" />
+    <MESSAGE value="Creazione matrice associata alla tabella grafica" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creazione matrice associata alla tabella grafica" />
   </component>
 </project>
