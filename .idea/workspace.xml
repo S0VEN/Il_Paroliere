@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="prova">
+    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="Bananaaa">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Paroliere/Grafica.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Paroliere/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,40 +50,6 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Paroliere.Main" />
-      <module name="Il Paroliere" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Paroliere.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TableParoliere" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Paroliere.TableParoliere" />
-      <module name="Il Paroliere" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Paroliere.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.TableParoliere" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -95,7 +61,10 @@
       <workItem from="1673950856297" duration="3603000" />
       <workItem from="1673955018669" duration="1679000" />
       <workItem from="1674126358381" duration="760000" />
-      <workItem from="1674553078536" duration="9091000" />
+      <workItem from="1674553078536" duration="1016000" />
+      <workItem from="1674812505918" duration="3000" />
+      <workItem from="1674822287689" duration="2087000" />
+      <workItem from="1675160945615" duration="400000" />
     </task>
     <task id="LOCAL-00001" summary="Banana">
       <created>1673952451063</created>
@@ -132,14 +101,7 @@
       <option name="project" value="LOCAL" />
       <updated>1673954012392</updated>
     </task>
-    <task id="LOCAL-00006" summary="prova">
-      <created>1674554212565</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1674554212565</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,7 +134,6 @@
     <MESSAGE value="Banana" />
     <MESSAGE value="Bananaaa" />
     <MESSAGE value="Add word to println" />
-    <MESSAGE value="prova" />
-    <option name="LAST_COMMIT_MESSAGE" value="prova" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add word to println" />
   </component>
 </project>

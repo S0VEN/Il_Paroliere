@@ -3,6 +3,8 @@ package Paroliere;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Random;
 
 public class Main {
@@ -13,14 +15,24 @@ public class Main {
 
         frame.setSize(700,900);
 
-        for (int i = 0;i<100;i++){
-            Random r = new Random();
-            char c = (char) (r.nextInt(26) + 'a');
-            JButton button = new JButton(String.valueOf(c));
-            button.setPreferredSize(new Dimension(50,50));
-            tabella.add(button);
-            button.setEnabled(false);
+        char[][] grid = new char[10][10];
+        Random r = new Random();
+
+        for (int i = 0; i < grid.length; i++){
+            for (int j = 0; j < grid[i].length; j++){
+                char c = (char) (r.nextInt(26) + 'a');
+                grid[i][j] = c;
+                JButton button = new JButton(String.valueOf(c));
+                button.setPreferredSize(new Dimension(50,50));
+                tabella.add(button);
+                button.setEnabled(false);
+            }
         }
+
+        /*for (int i = 0; i < grid.length; i++)
+            for (int j = 0; j < grid[i].length; j++)        visualizza tabella
+                System.out.print(grid[i][j] + " ");*/
+
         layout.add(tabella);
         JPanel in = new JPanel();
         JTextField input = new JTextField();
@@ -32,6 +44,13 @@ public class Main {
 
         JButton invio = new JButton(" Vai ");
         invio.setPreferredSize(new Dimension(60,20));
+        invio.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String in = input.getText();
+                System.out.println(in);
+            }
+        });
         layout.add(invio);
 
         //input.getText() prendere il valore dell'input
