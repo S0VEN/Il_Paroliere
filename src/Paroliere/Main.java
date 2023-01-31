@@ -7,15 +7,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
+
 public class Main {
+
+
     public static void main(String[] args) {
+        final int dim = 5;
         JFrame frame = new JFrame();
         JPanel layout = new JPanel();
-        JPanel tabella = new JPanel(new GridLayout(10, 10, 10, 10));
+        JPanel tabella = new JPanel(new GridLayout(dim, dim, 10, 10));
 
         frame.setSize(700, 900);
 
-        char[][] grid = new char[10][10];
+        char[][] grid = new char[dim][dim];
         Random r = new Random();
 
         for (int i = 0; i < grid.length; i++) {
@@ -35,6 +39,8 @@ public class Main {
 
         layout.add(tabella);
         JPanel in = new JPanel();
+        JPanel ris = new JPanel();
+        JPanel risultato = new JPanel();
         JTextField input = new JTextField();
         input.setColumns(20);
         input.setPreferredSize(new Dimension(200, 24));
@@ -48,9 +54,29 @@ public class Main {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String in = input.getText();
+                JLabel truee = new JLabel();
+                JLabel falsee = new JLabel();
+                if (isThere(grid, in)) {
+                    ris.remove(truee);
+                    truee.setText("Testo Trovato !");
+                    ris.add(truee);
+                    layout.add(ris);
+                    frame.add(layout);
+                    frame.setVisible(true);
 
-                if (isThere(grid, in)) System.out.println("True");
-                else System.out.println("false");
+
+                }
+                else {
+                    ris.remove(falsee);
+                    falsee.setText("Testo Non Trovato !");
+                    ris.add(falsee);
+                    layout.add(ris);
+                    frame.add(layout);
+                    frame.setVisible(true);
+
+
+                }
+
 
                 input.setText("");
 
