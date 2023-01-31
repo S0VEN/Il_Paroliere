@@ -55,7 +55,6 @@ public class Main {
                     ch[i] = in.charAt(i);
                 }
 
-
             }
         });
         layout.add(invio);
