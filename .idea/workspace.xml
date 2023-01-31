@@ -63,7 +63,7 @@
       <workItem from="1674553078536" duration="1016000" />
       <workItem from="1674812505918" duration="3000" />
       <workItem from="1674822287689" duration="2087000" />
-      <workItem from="1675160945615" duration="855000" />
+      <workItem from="1675160945615" duration="1664000" />
     </task>
     <task id="LOCAL-00001" summary="Banana">
       <created>1673952451063</created>
@@ -114,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675161617032</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Creazione matrice associata alla tabella grafica">
+      <created>1675161859600</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1675161859600</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

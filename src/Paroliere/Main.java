@@ -44,7 +44,20 @@ public class Main {
 
         JButton invio = new JButton(" Vai ");
         invio.setPreferredSize(new Dimension(60,20));
+        invio.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String in = input.getText();
 
+                char[] ch = new char[in.length()];
+
+                for (int i = 0; i < in.length(); i++) {
+                    ch[i] = in.charAt(i);
+                }
+
+
+            }
+        });
         layout.add(invio);
 
         //input.getText() prendere il valore dell'input
