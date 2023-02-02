@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="Memorizzazione parola input in array di char">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_01_2023_08_38_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_01_2023_08_38__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Paroliere/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +65,8 @@
       <workItem from="1674553078536" duration="1016000" />
       <workItem from="1674812505918" duration="3000" />
       <workItem from="1674822287689" duration="2087000" />
-      <workItem from="1675160945615" duration="1868000" />
+      <workItem from="1675160945615" duration="2229000" />
+      <workItem from="1675333385277" duration="4787000" />
     </task>
     <task id="LOCAL-00001" summary="Banana">
       <created>1673952451063</created>
@@ -127,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675162685310</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Memorizzazione parola input in array di char">
+      <created>1675162850507</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1675162850507</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

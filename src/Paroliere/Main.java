@@ -55,6 +55,11 @@ public class Main {
                     ch[i] = in.charAt(i);
                 }
 
+                if(isThere(ch,grid)) System.out.println("True");
+                else System.out.println("false");
+
+                input.setText("");
+
             }
         });
         layout.add(invio);
@@ -68,4 +73,82 @@ public class Main {
         //Double.parseDouble(input.getText()) get text from textfield
         frame.setVisible(true);
     }
+
+    public static boolean isThere(char[] word, char grid[][]){
+        boolean isThere = false;
+
+        for (int i = 0; i < grid.length; i++){
+            for (int j = 0; j < grid[i].length; j++){
+                int x = 0;
+                if(grid[i][j]==word[x] && isThere == false){
+                    isThere = checkMatrix(x,i,j,word,grid);
+                }
+            }
+        }
+
+        return isThere;
+    }
+
+    public static boolean checkMatrix(int x, int i, int j, char[] word, char grid[][]){
+
+        if(grid[i-1][j-1] == word[x]){
+            if(i-1 > -1 && j-1 > -1){
+                if(x++ == word.length) return true;
+                else checkMatrix(x++,i-1,j-1,word,grid);
+            }
+        }
+        if(grid[i-1][j] == word[x]){
+            if(i-1 > -1){
+                if(x++ == word.length) return true;
+                else checkMatrix(x++,i-1,j,word,grid);
+            }
+        }
+        if(grid[i-1][j+1] == word[x]){
+            if(i-1 > -1 && j+1 < 11){
+                if(x++ == word.length) return true;
+                else checkMatrix(x++,i-1,j+1,word,grid);
+            }
+        }
+        if(grid[i][j-1] == word[x]){
+            if(j-1 > -1){
+                if(x++ == word.length) return true;
+                else checkMatrix(x++,i,j-1,word,grid);
+            }
+        }
+        if(grid[i][j+1] == word[x]){
+            if(j+1 < 11){
+                if(x++ == word.length) return true;
+                else checkMatrix(x++,i,j+1,word,grid);
+            }
+        }
+        if(grid[i+1][j-1] == word[x]){
+            if(i+1 < 11 && j-1 > -1){
+                if(x++ == word.length) return true;
+                else checkMatrix(x++,i+1,j-1,word,grid);
+            }
+        }
+        if(grid[i+1][j] == word[x]){
+            if(i+1 < 11){
+                if(x++ == word.length) return true;
+                else checkMatrix(x++,i+1,j,word,grid);
+            }
+        }
+        if(grid[i+1][j+1] == word[x]){
+            if(i+1 < 11 & j+1 < 11){
+                if(x++ == word.length) return true;
+                else checkMatrix(x++,i+1,j+1,word,grid);
+            }
+        }
+
+        return false;
+    }
+
+    public static boolean isCorrect(String word){
+        boolean isCorrect = false;
+
+
+
+        return isCorrect;
+    }
 }
+
