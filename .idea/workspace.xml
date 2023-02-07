@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="Memorizzazione parola input in array di char">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_01_2023_08_38_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_01_2023_08_38__Changes_1.xml" beforeDir="false" />
+    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="Alpha algoritmo di ricerca ricorsivo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Paroliere/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/Main.java" afterDir="false" />
     </list>
@@ -66,7 +64,8 @@
       <workItem from="1674812505918" duration="3000" />
       <workItem from="1674822287689" duration="2087000" />
       <workItem from="1675160945615" duration="2229000" />
-      <workItem from="1675333385277" duration="4787000" />
+      <workItem from="1675333385277" duration="4890000" />
+      <workItem from="1675761909736" duration="772000" />
     </task>
     <task id="LOCAL-00001" summary="Banana">
       <created>1673952451063</created>
@@ -138,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675162850507</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Alpha algoritmo di ricerca ricorsivo">
+      <created>1675338249849</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1675338249849</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,6 +179,7 @@
     <MESSAGE value="Add word to println" />
     <MESSAGE value="Creazione matrice associata alla tabella grafica" />
     <MESSAGE value="Memorizzazione parola input in array di char" />
-    <option name="LAST_COMMIT_MESSAGE" value="Memorizzazione parola input in array di char" />
+    <MESSAGE value="Alpha algoritmo di ricerca ricorsivo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Alpha algoritmo di ricerca ricorsivo" />
   </component>
 </project>

@@ -11,19 +11,19 @@ public class Main {
     public static void main(String[] args) {
         JFrame frame = new JFrame();
         JPanel layout = new JPanel();
-        JPanel tabella = new JPanel(new GridLayout(10,10,10,10));
+        JPanel tabella = new JPanel(new GridLayout(10, 10, 10, 10));
 
-        frame.setSize(700,900);
+        frame.setSize(700, 900);
 
         char[][] grid = new char[10][10];
         Random r = new Random();
 
-        for (int i = 0; i < grid.length; i++){
-            for (int j = 0; j < grid[i].length; j++){
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
                 char c = (char) (r.nextInt(26) + 'a');
                 grid[i][j] = c;
                 JButton button = new JButton(String.valueOf(c));
-                button.setPreferredSize(new Dimension(50,50));
+                button.setPreferredSize(new Dimension(50, 50));
                 tabella.add(button);
                 button.setEnabled(false);
             }
@@ -37,25 +37,19 @@ public class Main {
         JPanel in = new JPanel();
         JTextField input = new JTextField();
         input.setColumns(20);
-        input.setPreferredSize( new Dimension( 200, 24 ) );
+        input.setPreferredSize(new Dimension(200, 24));
         in.setBorder(new EmptyBorder(50, 50, 50, 50));
         in.add(input);
         layout.add(in);
 
         JButton invio = new JButton(" Vai ");
-        invio.setPreferredSize(new Dimension(60,20));
+        invio.setPreferredSize(new Dimension(60, 20));
         invio.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String in = input.getText();
 
-                char[] ch = new char[in.length()];
-
-                for (int i = 0; i < in.length(); i++) {
-                    ch[i] = in.charAt(i);
-                }
-
-                if(isThere(ch,grid)) System.out.println("True");
+                if (isThere(grid, in)) System.out.println("True");
                 else System.out.println("false");
 
                 input.setText("");
@@ -69,86 +63,39 @@ public class Main {
         frame.add(layout);
 
 
-
         //Double.parseDouble(input.getText()) get text from textfield
         frame.setVisible(true);
     }
 
-    public static boolean isThere(char[] word, char grid[][]){
-        boolean isThere = false;
-
-        for (int i = 0; i < grid.length; i++){
-            for (int j = 0; j < grid[i].length; j++){
-                int x = 0;
-                if(grid[i][j]==word[x] && isThere == false){
-                    isThere = checkMatrix(x,i,j,word,grid);
+    public static boolean isThere(char[][] grid, String word) {
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                if (checkMatrix(grid, word, i, j, 0)) {
+                    return true;
                 }
             }
         }
-
-        return isThere;
-    }
-
-    public static boolean checkMatrix(int x, int i, int j, char[] word, char grid[][]){
-
-        if(grid[i-1][j-1] == word[x]){
-            if(i-1 > -1 && j-1 > -1){
-                if(x++ == word.length) return true;
-                else checkMatrix(x++,i-1,j-1,word,grid);
-            }
-        }
-        if(grid[i-1][j] == word[x]){
-            if(i-1 > -1){
-                if(x++ == word.length) return true;
-                else checkMatrix(x++,i-1,j,word,grid);
-            }
-        }
-        if(grid[i-1][j+1] == word[x]){
-            if(i-1 > -1 && j+1 < 11){
-                if(x++ == word.length) return true;
-                else checkMatrix(x++,i-1,j+1,word,grid);
-            }
-        }
-        if(grid[i][j-1] == word[x]){
-            if(j-1 > -1){
-                if(x++ == word.length) return true;
-                else checkMatrix(x++,i,j-1,word,grid);
-            }
-        }
-        if(grid[i][j+1] == word[x]){
-            if(j+1 < 11){
-                if(x++ == word.length) return true;
-                else checkMatrix(x++,i,j+1,word,grid);
-            }
-        }
-        if(grid[i+1][j-1] == word[x]){
-            if(i+1 < 11 && j-1 > -1){
-                if(x++ == word.length) return true;
-                else checkMatrix(x++,i+1,j-1,word,grid);
-            }
-        }
-        if(grid[i+1][j] == word[x]){
-            if(i+1 < 11){
-                if(x++ == word.length) return true;
-                else checkMatrix(x++,i+1,j,word,grid);
-            }
-        }
-        if(grid[i+1][j+1] == word[x]){
-            if(i+1 < 11 & j+1 < 11){
-                if(x++ == word.length) return true;
-                else checkMatrix(x++,i+1,j+1,word,grid);
-            }
-        }
-
         return false;
     }
 
-    public static boolean isCorrect(String word){
-        boolean isCorrect = false;
-
-
-
-        return isCorrect;
+    public static boolean checkMatrix(char[][] grid, String word, int i, int j, int x) {
+        if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length) {
+            return false;
+        }
+        if (grid[i][j] == word.charAt(x)) {
+            char tmp = grid[i][j];
+            grid[i][j] = '#';
+            if (x == word.length() - 1) {
+                return true;
+            } else if (checkMatrix(grid, word, i - 1, j, x + 1)
+                    || checkMatrix(grid, word, i + 1, j, x + 1)
+                    || checkMatrix(grid, word, i, j - 1, x + 1)
+                    || checkMatrix(grid, word, i, j + 1, x + 1)) {
+                return true;
+            }
+            grid[i][j] = tmp;
+        }
+        return false;
     }
 }
 
