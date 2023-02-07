@@ -90,7 +90,11 @@ public class Main {
             } else if (checkMatrix(grid, word, i - 1, j, x + 1)
                     || checkMatrix(grid, word, i + 1, j, x + 1)
                     || checkMatrix(grid, word, i, j - 1, x + 1)
-                    || checkMatrix(grid, word, i, j + 1, x + 1)) {
+                    || checkMatrix(grid, word, i, j + 1, x + 1)
+                    || checkMatrix(grid, word, i - 1, j - 1, x + 1)
+                    || checkMatrix(grid, word, i + 1, j + 1, x + 1)
+                    || checkMatrix(grid, word, i + 1, j - 1, x + 1)
+                    || checkMatrix(grid, word, i - 1, j + 1, x + 1)){
                 return true;
             }
             grid[i][j] = tmp;

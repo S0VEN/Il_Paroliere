@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="Alpha algoritmo di ricerca ricorsivo">
+    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="Algoritmo ricorsivo funzionante che però trova parole solo in verticale e orizzontale e queste devono essere sviluppate in &quot;linea retta&quot; e non possono cambiare direzione durante lo sviluppo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Paroliere/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/Main.java" afterDir="false" />
     </list>
@@ -65,7 +65,7 @@
       <workItem from="1674822287689" duration="2087000" />
       <workItem from="1675160945615" duration="2229000" />
       <workItem from="1675333385277" duration="4890000" />
-      <workItem from="1675761909736" duration="772000" />
+      <workItem from="1675761909736" duration="1205000" />
     </task>
     <task id="LOCAL-00001" summary="Banana">
       <created>1673952451063</created>
@@ -144,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675338249849</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Algoritmo ricorsivo funzionante che però trova parole solo in verticale e orizzontale e queste devono essere sviluppate in &quot;linea retta&quot; e non possono cambiare direzione durante lo sviluppo">
+      <created>1675763017613</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1675763017613</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +187,7 @@
     <MESSAGE value="Creazione matrice associata alla tabella grafica" />
     <MESSAGE value="Memorizzazione parola input in array di char" />
     <MESSAGE value="Alpha algoritmo di ricerca ricorsivo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Alpha algoritmo di ricerca ricorsivo" />
+    <MESSAGE value="Algoritmo ricorsivo funzionante che però trova parole solo in verticale e orizzontale e queste devono essere sviluppate in &quot;linea retta&quot; e non possono cambiare direzione durante lo sviluppo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Algoritmo ricorsivo funzionante che però trova parole solo in verticale e orizzontale e queste devono essere sviluppate in &quot;linea retta&quot; e non possono cambiare direzione durante lo sviluppo" />
   </component>
 </project>
