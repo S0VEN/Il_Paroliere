@@ -12,12 +12,22 @@ public class Main {
 
 
     public static void main(String[] args) {
-        final int dim = 5;
+        final int dim = 15;
         JFrame frame = new JFrame();
         JPanel layout = new JPanel();
         JPanel tabella = new JPanel(new GridLayout(dim, dim, 10, 10));
 
-        frame.setSize(700, 900);
+        if(dim == 15){
+            frame.setSize(1500, 1000);
+        }
+        if(dim == 10){
+            frame.setSize(700, 900);
+        }
+        if(dim == 5){
+            frame.setSize(400, 600);
+        }
+
+
 
         char[][] grid = new char[dim][dim];
         Random r = new Random();
