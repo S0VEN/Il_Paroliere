@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="Aggiunta la possibilità di cercare parole in diagonale&#10;Rimane presente il vincolo che queste devono svilupparsi sempre nella stessa direzione">
+    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="Inclusione file txt con parole esistenti">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/660000_parole_italiane.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/660000_parole_italiane.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Paroliere/660000_parole_italiane.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/Words.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Paroliere/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -147,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675162850507</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Inclusione file txt con parole esistenti">
+      <created>1676368145624</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1676368145624</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,6 +189,7 @@
     <MESSAGE value="Add word to println" />
     <MESSAGE value="Creazione matrice associata alla tabella grafica" />
     <MESSAGE value="Memorizzazione parola input in array di char" />
-    <option name="LAST_COMMIT_MESSAGE" value="Memorizzazione parola input in array di char" />
+    <MESSAGE value="Inclusione file txt con parole esistenti" />
+    <option name="LAST_COMMIT_MESSAGE" value="Inclusione file txt con parole esistenti" />
   </component>
 </project>

@@ -60,7 +60,7 @@ public class Main {
                 JLabel truee = new JLabel();
                 JLabel falsee = new JLabel();
                 if (isThere(grid, in)) {
-                    if(isCorrect("src/Paroliere/660000_parole_italiane.txt",in)){
+                    if(isCorrect("src/Paroliere/Words.txt",in)){
                         ris.remove(truee);
                         truee.setText("Testo Trovato !");
                         ris.add(truee);
