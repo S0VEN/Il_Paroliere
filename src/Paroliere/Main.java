@@ -9,6 +9,7 @@ import java.util.Random;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 
 public class Main {
@@ -22,6 +23,7 @@ public class Main {
 
         frame.setSize(700, 900);
 
+        ArrayList<String> parole = new ArrayList<String>();
         char[][] grid = new char[dim][dim];
         Random r = new Random();
 
@@ -61,12 +63,15 @@ public class Main {
                 JLabel falsee = new JLabel();
                 if (isThere(grid, in)) {
                     if(isCorrect("src/Paroliere/Words.txt",in)){
-                        ris.remove(truee);
-                        truee.setText("Testo Trovato !");
-                        ris.add(truee);
-                        layout.add(ris);
-                        frame.add(layout);
-                        frame.setVisible(true);
+                        if(!parole.contains(in)){
+                            ris.remove(truee);
+                            parole.add(in);
+                            truee.setText("Testo Trovato !");
+                            ris.add(truee);
+                            layout.add(ris);
+                            frame.add(layout);
+                            frame.setVisible(true);
+                        }else System.out.println("C'è già stupido");
                     }
                 }
                 else {
@@ -103,8 +108,6 @@ public class Main {
             return false;
         }
         if (grid[i][j] == word.charAt(x)) {
-            char tmp = grid[i][j];
-            grid[i][j] = '#';
             if (x == word.length() - 1) {
                 return true;
             } else if (checkMatrix(grid, word, i - 1, j, x + 1)
@@ -117,7 +120,6 @@ public class Main {
                     || checkMatrix(grid, word, i - 1, j + 1, x + 1)){
                 return true;
             }
-            grid[i][j] = tmp;
         }
         return false;
     }
