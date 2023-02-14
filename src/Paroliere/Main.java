@@ -16,15 +16,19 @@ public class Main {
 
 
     public static void main(String[] args) {
-        final int dim = 15;
+        final int size = 15;
+        createTable(size);
+    }
+
+    public static void createTable(final int size){
         JFrame frame = new JFrame();
         JPanel layout = new JPanel();
-        JPanel tabella = new JPanel(new GridLayout(dim, dim, 1, 1));
+        JPanel table = new JPanel(new GridLayout(size, size, 1, 1));
 
         frame.setSize(700, 900);
 
         ArrayList<String> parole = new ArrayList<String>();
-        char[][] grid = new char[dim][dim];
+        char[][] grid = new char[size][size];
         Random r = new Random();
 
         for (int i = 0; i < grid.length; i++) {
@@ -33,7 +37,7 @@ public class Main {
                 grid[i][j] = c;
                 JButton button = new JButton(String.valueOf(c));
                 button.setPreferredSize(new Dimension(50, 50));
-                tabella.add(button);
+                table.add(button);
                 button.setEnabled(false);
             }
         }
@@ -42,7 +46,7 @@ public class Main {
             for (int j = 0; j < grid[i].length; j++)        visualizza tabella
                 System.out.print(grid[i][j] + " ");*/
 
-        layout.add(tabella);
+        layout.add(table);
         JPanel in = new JPanel();
         JPanel ris = new JPanel();
         JPanel risultato = new JPanel();
