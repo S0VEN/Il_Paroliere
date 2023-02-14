@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="piccole chicche da fixare ancora">
+    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="Aggiunta la possibilità di cercare parole in diagonale&#10;Rimane presente il vincolo che queste devono svilupparsi sempre nella stessa direzione">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/660000_parole_italiane.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/660000_parole_italiane.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Paroliere/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,6 +51,14 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Paroliere" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Acer\IdeaProjects\Il_Paroliere\src\Paroliere" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -66,9 +75,7 @@
       <workItem from="1674822287689" duration="2087000" />
       <workItem from="1675160945615" duration="2229000" />
       <workItem from="1675333385277" duration="4787000" />
-      <workItem from="1675938674571" duration="2895000" />
-      <workItem from="1676021605630" duration="8000" />
-      <workItem from="1676021714597" duration="548000" />
+      <workItem from="1675938674571" duration="2869000" />
     </task>
     <task id="LOCAL-00001" summary="Banana">
       <created>1673952451063</created>
@@ -140,14 +147,7 @@
       <option name="project" value="LOCAL" />
       <updated>1675162850507</updated>
     </task>
-    <task id="LOCAL-00011" summary="piccole chicche da fixare ancora">
-      <created>1675941586901</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1675941586901</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,7 +182,6 @@
     <MESSAGE value="Add word to println" />
     <MESSAGE value="Creazione matrice associata alla tabella grafica" />
     <MESSAGE value="Memorizzazione parola input in array di char" />
-    <MESSAGE value="piccole chicche da fixare ancora" />
-    <option name="LAST_COMMIT_MESSAGE" value="piccole chicche da fixare ancora" />
+    <option name="LAST_COMMIT_MESSAGE" value="Memorizzazione parola input in array di char" />
   </component>
 </project>

@@ -6,6 +6,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 
 public class Main {
@@ -15,19 +18,9 @@ public class Main {
         final int dim = 15;
         JFrame frame = new JFrame();
         JPanel layout = new JPanel();
-        JPanel tabella = new JPanel(new GridLayout(dim, dim, 10, 10));
+        JPanel tabella = new JPanel(new GridLayout(dim, dim, 1, 1));
 
-        if(dim == 15){
-            frame.setSize(1500, 1000);
-        }
-        if(dim == 10){
-            frame.setSize(700, 900);
-        }
-        if(dim == 5){
-            frame.setSize(400, 600);
-        }
-
-
+        frame.setSize(700, 900);
 
         char[][] grid = new char[dim][dim];
         Random r = new Random();
@@ -67,14 +60,14 @@ public class Main {
                 JLabel truee = new JLabel();
                 JLabel falsee = new JLabel();
                 if (isThere(grid, in)) {
-                    ris.remove(truee);
-                    truee.setText("Testo Trovato !");
-                    ris.add(truee);
-                    layout.add(ris);
-                    frame.add(layout);
-                    frame.setVisible(true);
-
-
+                    if(isCorrect("src/Paroliere/660000_parole_italiane.txt",in)){
+                        ris.remove(truee);
+                        truee.setText("Testo Trovato !");
+                        ris.add(truee);
+                        layout.add(ris);
+                        frame.add(layout);
+                        frame.setVisible(true);
+                    }
                 }
                 else {
                     ris.remove(falsee);
@@ -83,23 +76,14 @@ public class Main {
                     layout.add(ris);
                     frame.add(layout);
                     frame.setVisible(true);
-
-
                 }
-
-
                 input.setText("");
-
             }
         });
         layout.add(invio);
 
-        //input.getText() prendere il valore dell'input
-
         frame.add(layout);
 
-
-        //Double.parseDouble(input.getText()) get text from textfield
         frame.setVisible(true);
     }
 
@@ -137,5 +121,25 @@ public class Main {
         }
         return false;
     }
+
+    public static boolean isCorrect(String filePath, String word) {
+        try {
+            File file = new File(filePath);
+            Scanner scanner = new Scanner(file);
+
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                if (line.equals(word)) {
+                    return true;
+                }
+            }
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+
 }
 
