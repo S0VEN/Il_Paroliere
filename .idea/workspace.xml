@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="Aggiunta di un vettore dinamico contenente le parole trovate per impedirne la ripetizione">
+    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="aggiunta dizionaio txt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Paroliere/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/Main.java" afterDir="false" />
     </list>
@@ -75,7 +75,8 @@
       <workItem from="1675160945615" duration="2229000" />
       <workItem from="1675333385277" duration="4787000" />
       <workItem from="1675938674571" duration="2869000" />
-      <workItem from="1676371293573" duration="2793000" />
+      <workItem from="1676371293573" duration="1179000" />
+      <workItem from="1676452778508" duration="2847000" />
     </task>
     <task id="LOCAL-00001" summary="Banana">
       <created>1673952451063</created>
@@ -161,14 +162,7 @@
       <option name="project" value="LOCAL" />
       <updated>1676370217886</updated>
     </task>
-    <task id="LOCAL-00013" summary="Aggiunta di un vettore dinamico contenente le parole trovate per impedirne la ripetizione">
-      <created>1676372531284</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1676372531284</updated>
-    </task>
-    <option name="localTasksCounter" value="14" />
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,7 +199,6 @@
     <MESSAGE value="Memorizzazione parola input in array di char" />
     <MESSAGE value="Inclusione file txt con parole esistenti" />
     <MESSAGE value="Inclusione parole inglesi" />
-    <MESSAGE value="Aggiunta di un vettore dinamico contenente le parole trovate per impedirne la ripetizione" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta di un vettore dinamico contenente le parole trovate per impedirne la ripetizione" />
+    <option name="LAST_COMMIT_MESSAGE" value="Inclusione parole inglesi" />
   </component>
 </project>

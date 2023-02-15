@@ -14,16 +14,20 @@ import java.util.ArrayList;
 
 public class Main {
 
-
+    public static int t = 10;
     public static void main(String[] args) {
         final int size = 15;
         createTable(size);
     }
 
     public static void createTable(final int size){
+         final Timer timer;
+         final JLabel tim;
         JFrame frame = new JFrame();
         JPanel layout = new JPanel();
+        JPanel g = new JPanel(new GridLayout(0, 2,0,0 ));
         JPanel table = new JPanel(new GridLayout(size, size, 1, 1));
+        tim = new JLabel(String.valueOf(t), SwingConstants.CENTER);
 
         frame.setSize(700, 900);
 
@@ -46,6 +50,19 @@ public class Main {
             for (int j = 0; j < grid[i].length; j++)        visualizza tabella
                 System.out.print(grid[i][j] + " ");*/
 
+        timer = new Timer(1000, e -> {
+
+            if(t==0){
+               tim.setText("0");
+
+            }
+            else{
+                t--;
+                tim.setText(String.valueOf(t));
+            }
+        });
+
+        timer.start();
         layout.add(table);
         JPanel in = new JPanel();
         JPanel ris = new JPanel();
@@ -56,6 +73,10 @@ public class Main {
         in.setBorder(new EmptyBorder(50, 50, 50, 50));
         in.add(input);
         layout.add(in);
+
+
+        // Crea un timer che eseguirà un'azione ripetuta ogni 1000 millisecondi
+
 
         JButton invio = new JButton(" Vai ");
         invio.setPreferredSize(new Dimension(60, 20));
@@ -73,7 +94,9 @@ public class Main {
                             truee.setText("Testo Trovato !");
                             ris.add(truee);
                             layout.add(ris);
-                            frame.add(layout);
+                            g.add(layout);
+                            frame.add(g);
+
                             frame.setVisible(true);
                         }else System.out.println("C'è già stupido");
                     }
@@ -83,15 +106,18 @@ public class Main {
                     falsee.setText("Testo Non Trovato !");
                     ris.add(falsee);
                     layout.add(ris);
-                    frame.add(layout);
+                    g.add(layout);
+                    frame.add(g);
                     frame.setVisible(true);
                 }
                 input.setText("");
             }
         });
         layout.add(invio);
+        g.add(tim);
+        g.add(layout);
 
-        frame.add(layout);
+        frame.add(g);
 
         frame.setVisible(true);
     }
