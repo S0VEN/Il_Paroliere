@@ -17,11 +17,11 @@ public class Main {
 
     public static int t = 10;
     public static void main(String[] args) {
-        final int size = 10;
-        createTable(size);
+
     }
 
-    public static void createTable(final int size){
+    public static void createTable(final int size, final int diff){
+
          //final Timer timer;
          //final JLabel tim;
         JFrame frame = new JFrame();
