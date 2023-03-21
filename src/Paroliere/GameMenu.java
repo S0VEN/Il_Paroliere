@@ -101,5 +101,6 @@ public class GameMenu extends JFrame {
         // Crea una nuova istanza della finestra del menu del gioco
         GameMenu gameMenu = new GameMenu();
         gameMenu.setVisible(true);
+
     }
 }

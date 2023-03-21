@@ -14,22 +14,23 @@ import java.util.ArrayList;
 
 public class Main {
 
+
     public static int t = 10;
     public static void main(String[] args) {
-        final int size = 15;
+        final int size = 10;
         createTable(size);
     }
 
     public static void createTable(final int size){
-         final Timer timer;
-         final JLabel tim;
+         //final Timer timer;
+         //final JLabel tim;
         JFrame frame = new JFrame();
         JPanel layout = new JPanel();
-        JPanel g = new JPanel(new GridLayout(0, 2,0,0 ));
+        JPanel g = new JPanel(new GridLayout(1, 1,0,0 ));
         JPanel table = new JPanel(new GridLayout(size, size, 1, 1));
-        tim = new JLabel(String.valueOf(t), SwingConstants.CENTER);
+        //tim = new JLabel(String.valueOf(t), SwingConstants.CENTER);
 
-        frame.setSize(700, 900);
+        frame.setSize(1360, 768);
 
         ArrayList<String> parole = new ArrayList<String>();
         char[][] grid = new char[size][size];
@@ -50,7 +51,7 @@ public class Main {
             for (int j = 0; j < grid[i].length; j++)        visualizza tabella
                 System.out.print(grid[i][j] + " ");*/
 
-        timer = new Timer(1000, e -> {
+        /*timer = new Timer(1000, e -> {
 
             if(t==0){
                tim.setText("0");
@@ -61,8 +62,10 @@ public class Main {
                 tim.setText(String.valueOf(t));
             }
         });
+        */
 
-        timer.start();
+
+        //timer.start();
         layout.add(table);
         JPanel in = new JPanel();
         JPanel ris = new JPanel();
@@ -114,7 +117,7 @@ public class Main {
             }
         });
         layout.add(invio);
-        g.add(tim);
+        //g.add(tim);
         g.add(layout);
 
         frame.add(g);
