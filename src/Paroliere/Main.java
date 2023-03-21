@@ -30,7 +30,15 @@ public class Main {
         JPanel table = new JPanel(new GridLayout(size, size, 1, 1));
         //tim = new JLabel(String.valueOf(t), SwingConstants.CENTER);
 
-        frame.setSize(1360, 768);
+        if(size == 5){
+            frame.setSize(500, 500);
+        }
+        else if (size == 10){
+            frame.setSize(1000, 768);
+        }else {
+            frame.setSize(1360, 900);
+        }
+
 
         ArrayList<String> parole = new ArrayList<String>();
         char[][] grid = new char[size][size];

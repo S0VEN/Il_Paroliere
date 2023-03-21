@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="pushaaaa">
+    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="implementaione del sistema del muenù di gioco è pulsante start in base alla selezione della dimensione dei radio button">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Paroliere/GameMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/GameMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Paroliere/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -204,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679398501740</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="implementaione del sistema del muenù di gioco è pulsante start in base alla selezione della dimensione dei radio button">
+      <created>1679401883109</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1679401883109</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +248,7 @@
     <MESSAGE value="Inclusione file txt con parole esistenti" />
     <MESSAGE value="Inclusione parole inglesi" />
     <MESSAGE value="pushaaaa" />
-    <option name="LAST_COMMIT_MESSAGE" value="pushaaaa" />
+    <MESSAGE value="implementaione del sistema del muenù di gioco è pulsante start in base alla selezione della dimensione dei radio button" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementaione del sistema del muenù di gioco è pulsante start in base alla selezione della dimensione dei radio button" />
   </component>
 </project>
