@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="implementaione del sistema del muenù di gioco è pulsante start in base alla selezione della dimensione dei radio button">
+    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="Aggiunta resize jframe delle dimensioni 5x5 10x10 15x15">
+      <change afterPath="$PROJECT_DIR$/src/Paroliere/test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Paroliere/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/Main.java" afterDir="false" />
     </list>
@@ -28,7 +29,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2KRwlHL6YZfgZoJi7UPZJrDhuNr" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -85,9 +88,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Paroliere.test" />
+      <module name="Il Paroliere" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Paroliere.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.GameMenu" />
+        <item itemvalue="Application.test" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -111,6 +128,7 @@
       <workItem from="1675938674571" duration="2869000" />
       <workItem from="1676371293573" duration="1179000" />
       <workItem from="1676452778508" duration="2847000" />
+      <workItem from="1679567521205" duration="3618000" />
     </task>
     <task id="LOCAL-00001" summary="Banana">
       <created>1673952451063</created>
@@ -210,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679401883109</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Aggiunta resize jframe delle dimensioni 5x5 10x10 15x15">
+      <created>1679402242996</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1679402242996</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +274,7 @@
     <MESSAGE value="Inclusione parole inglesi" />
     <MESSAGE value="pushaaaa" />
     <MESSAGE value="implementaione del sistema del muenù di gioco è pulsante start in base alla selezione della dimensione dei radio button" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementaione del sistema del muenù di gioco è pulsante start in base alla selezione della dimensione dei radio button" />
+    <MESSAGE value="Aggiunta resize jframe delle dimensioni 5x5 10x10 15x15" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta resize jframe delle dimensioni 5x5 10x10 15x15" />
   </component>
 </project>

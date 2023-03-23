@@ -1,6 +1,7 @@
 package Paroliere;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -25,20 +26,26 @@ public class Main {
          //final Timer timer;
          //final JLabel tim;
         JFrame frame = new JFrame();
+        frame.setBackground(Color.black);
         JPanel layout = new JPanel();
+        Border bordo = BorderFactory.createEmptyBorder(40,0,0,25);
         JPanel g = new JPanel(new GridLayout(1, 1,0,0 ));
         JPanel table = new JPanel(new GridLayout(size, size, 1, 1));
         //tim = new JLabel(String.valueOf(t), SwingConstants.CENTER);
-
+        table.setBackground(Color.black);
+        g.setBackground(Color.black);
+        layout.setBackground(Color.black);
         if(size == 5){
-            frame.setSize(500, 500);
+            frame.setSize(450, 475);
         }
         else if (size == 10){
-            frame.setSize(1000, 768);
+            frame.setSize(700, 725);
         }else {
-            frame.setSize(1360, 900);
-        }
+            frame.setSize(950, 975);
 
+        }
+        frame.getRootPane().setBorder(bordo);
+        frame.setResizable(false);
 
         ArrayList<String> parole = new ArrayList<String>();
         char[][] grid = new char[size][size];
@@ -50,6 +57,7 @@ public class Main {
                 grid[i][j] = c;
                 JButton button = new JButton(String.valueOf(c));
                 button.setPreferredSize(new Dimension(50, 50));
+
                 table.add(button);
                 button.setEnabled(false);
             }
@@ -80,8 +88,9 @@ public class Main {
         JPanel risultato = new JPanel();
         JTextField input = new JTextField();
         input.setColumns(20);
+        in.setBackground(Color.black);
         input.setPreferredSize(new Dimension(200, 24));
-        in.setBorder(new EmptyBorder(50, 50, 50, 50));
+        in.setBorder(new EmptyBorder(50, 0, 50, 10));
         in.add(input);
         layout.add(in);
 
