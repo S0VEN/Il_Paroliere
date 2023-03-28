@@ -1,48 +1,68 @@
 package Paroliere;
-
+import java.awt.event.*;
 import javax.swing.*;
-import java.awt.*;
 
 public class test extends JFrame {
 
+    private Timer timer;
+    private JLabel timerLabel;
+    private int counter = 10;
+
     public test() {
-        super("Finestra combinata");
-
-        // creazione delle componenti della finestra 1
-        JButton button1 = new JButton("Bottone 1");
-        JTextField textField1 = new JTextField();
-        JLabel label1 = new JLabel("Etichetta 1");
-
-        // creazione delle componenti della finestra 2
-        JButton button2 = new JButton("Bottone 2");
-        JTextField textField2 = new JTextField();
-        JLabel label2 = new JLabel("Etichetta 2");
-
-        // creazione del contenitore per le componenti
-        JPanel container = new JPanel(new BorderLayout());
-
-        // aggiunta delle componenti al contenitore
-        JPanel panel1 = new JPanel();
-        panel1.add(button1);
-        panel1.add(textField1);
-        panel1.add(label1);
-        container.add(panel1, BorderLayout.CENTER);
-
-        JPanel panel2 = new JPanel();
-        panel2.add(button2);
-        panel2.add(textField2);
-        panel2.add(label2);
-        container.add(panel2, BorderLayout.WEST);
-
-        // aggiunta del contenitore alla finestra principale
-        add(container);
-
+        super("Timer");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(400, 300);
-        setVisible(true);
+        setSize(300, 100);
+        JFrame m = new JFrame();
+        // Crea un JLabel per mostrare il tempo rimanente
+        timerLabel = new JLabel("Tempo rimanente: " + counter + " secondi");
+        getContentPane().add(timerLabel);
+
+        // Crea un Timer che viene eseguito ogni secondo
+        timer = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                counter--;
+                timerLabel.setText("Tempo rimanente: " + counter + " secondi");
+                if (counter == 0) { // Quando il Timer arriva a 0, ferma il Timer
+                    timer.stop();
+                }
+            }
+        });
+    }
+
+    public void startTimer(final int size, final int diff,boolean contro) {
+        // Avvia il Timer
+        // Crea un JLabel per mostrare il tempo rimanente
+        timerLabel = new JLabel("Tempo rimanente: " + counter + " secondi");
+
+        // Crea un Timer che viene eseguito ogni secondo
+        timer = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                counter--;
+                timerLabel.setText("Tempo rimanente: " + counter + " secondi");
+                if (counter == 0) { // Quando il Timer arriva a 0, ferma il Timer
+                    Main u = new Main();
+                    u.createTable(size,diff,false);
+                    timer.stop();
+                    dispose();
+
+                }
+            }
+        });
+        timer.start();
+        JFrame frame = new JFrame();
+        frame.setSize(300,100);
+        frame.add(timerLabel);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+
+
+
     }
 
     public static void main(String[] args) {
-        new test();
+        // Crea un'istanza di TimerFrame e lo visualizza
+
     }
 }

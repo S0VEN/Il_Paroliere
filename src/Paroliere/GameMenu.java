@@ -3,6 +3,7 @@ package Paroliere;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import javax.swing.*;
 
 public class GameMenu extends JFrame {
@@ -13,7 +14,6 @@ public class GameMenu extends JFrame {
 
         // Imposta il colore di sfondo della finestra
         getContentPane().setBackground(Color.WHITE);
-
         // Crea un JPanel per il titolo
         JPanel titlePanel = new JPanel();
         titlePanel.setBackground(Color.WHITE);
@@ -99,7 +99,12 @@ public class GameMenu extends JFrame {
                    siz = 15;
                 }
                 Main u = new Main();
-                u.createTable(siz,diff);
+
+                u.createTable(siz,diff,true);
+                test tempo = new test();
+                tempo.startTimer(siz,diff,true);
+
+                setVisible(false);
 
             }
         });
