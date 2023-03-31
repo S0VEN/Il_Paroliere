@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="Impostazione dell'avvio di più finestre alla volta" />
+    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="Aggiunta resize jframe delle dimensioni 5x5 10x10 15x15">
+      <change afterPath="$PROJECT_DIR$/src/Paroliere/GameTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Paroliere/Start.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_02_2023_12_44__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_02_2023_12_44__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Paroliere/GameMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/GameMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Paroliere/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Paroliere/test.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,7 +78,7 @@
       <recent name="C:\Users\Acer\IdeaProjects\Il_Paroliere\src\Paroliere" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GameMenu">
+  <component name="RunManager" selected="Application.Start">
     <configuration name="GameMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Paroliere.GameMenu" />
       <module name="Il Paroliere" />
@@ -97,6 +105,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Paroliere.Start" />
+      <module name="Il Paroliere" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Paroliere.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Paroliere.test" />
       <module name="Il Paroliere" />
@@ -112,8 +133,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GameMenu" />
+        <item itemvalue="Application.Start" />
         <item itemvalue="Application.test" />
+        <item itemvalue="Application.GameMenu" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -141,7 +163,7 @@
       <workItem from="1679576678167" duration="166000" />
       <workItem from="1679576916096" duration="2945000" />
       <workItem from="1679650705803" duration="84000" />
-      <workItem from="1679993913502" duration="5841000" />
+      <workItem from="1679993913502" duration="5782000" />
     </task>
     <task id="LOCAL-00001" summary="Banana">
       <created>1673952451063</created>
@@ -255,14 +277,7 @@
       <option name="project" value="LOCAL" />
       <updated>1679576746072</updated>
     </task>
-    <task id="LOCAL-00017" summary="Impostazione dell'avvio di più finestre alla volta">
-      <created>1680000018857</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1680000018857</updated>
-    </task>
-    <option name="localTasksCounter" value="18" />
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,7 +318,6 @@
     <MESSAGE value="implementaione del sistema del muenù di gioco è pulsante start in base alla selezione della dimensione dei radio button" />
     <MESSAGE value="Aggiunta resize jframe delle dimensioni 5x5 10x10 15x15" />
     <MESSAGE value="Impostazioni delle dimensioni in base al formato della griglia" />
-    <MESSAGE value="Impostazione dell'avvio di più finestre alla volta" />
-    <option name="LAST_COMMIT_MESSAGE" value="Impostazione dell'avvio di più finestre alla volta" />
+    <option name="LAST_COMMIT_MESSAGE" value="Impostazioni delle dimensioni in base al formato della griglia" />
   </component>
 </project>
