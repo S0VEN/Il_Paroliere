@@ -75,8 +75,6 @@ public class GameTable extends JFrame{
         in.add(input);
         layout.add(in);
 
-
-
         JButton send = new JButton("Send");
         send.setPreferredSize(new Dimension(100, 40));
         send.setBackground(Color.BLACK);
