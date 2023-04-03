@@ -144,6 +144,7 @@ public class GameTable extends JFrame{
                 }
             }
             scanner.close();
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

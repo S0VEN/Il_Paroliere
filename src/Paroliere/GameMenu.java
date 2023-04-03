@@ -126,7 +126,6 @@ public class GameMenu extends JFrame {
                 dispose();
             }
         });
-
         Container contentPane = getContentPane();
         contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.Y_AXIS));
         contentPane.add(Box.createRigidArea(new Dimension(0, 50)));
@@ -142,7 +141,6 @@ public class GameMenu extends JFrame {
         setSize(700, 600);
         setResizable(false);
         setLocationRelativeTo(null);
-
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }

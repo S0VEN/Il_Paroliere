@@ -112,7 +112,6 @@ public class GameStats extends JFrame {
         }
     }
 
-
     public class ScorePanel extends JPanel {
         private JLabel scoreLabel;
 
