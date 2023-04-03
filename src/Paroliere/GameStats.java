@@ -96,6 +96,7 @@ public class GameStats extends JFrame {
                     dispose();
                     gTable.dispose();
                     GameEnd gEnd = new GameEnd(score);
+                    score = 0;
                     timer.stop();
                 } else {
                     count--;

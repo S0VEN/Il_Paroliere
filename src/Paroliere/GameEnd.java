@@ -63,7 +63,6 @@ public class GameEnd extends JFrame {
                 dispose();
             }
         });
-
         exitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
