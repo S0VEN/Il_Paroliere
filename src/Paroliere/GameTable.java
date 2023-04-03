@@ -13,16 +13,12 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 
-public class GameTable {
+public class GameTable extends JFrame{
     public static int t = 10;
-    public static void main(String[] args) {
+    public GameTable(final int size, final int diff){
+        super("GameTable");
 
-    }
-
-    public static void createTable(final int size, final int diff){
-
-        JFrame frame = new JFrame();
-        frame.setBackground(Color.black);
+        setBackground(Color.black);
         JPanel layout = new JPanel();
         Border bordo = BorderFactory.createEmptyBorder(40,0,0,0);
         JPanel g = new JPanel(new GridLayout(1, 1,0,0 ));
@@ -32,16 +28,16 @@ public class GameTable {
         layout.setBackground(Color.black);
 
         if(size == 5){
-            frame.setSize(450, 475);
+            setSize(450, 475);
         }
         else if (size == 10){
-            frame.setSize(700, 725);
+            setSize(700, 725);
         }
 
-        frame.getRootPane().setBorder(bordo);
-        frame.setResizable(false);
+        getRootPane().setBorder(bordo);
+        setResizable(false);
 
-        ArrayList<String> parole = new ArrayList<String>();
+        ArrayList<String> words = new ArrayList<String>();
         char[][] grid = new char[size][size];
         Random r = new Random();
 
@@ -79,16 +75,15 @@ public class GameTable {
                 JLabel falsee = new JLabel();
                 if (isThere(grid, in)) {
                     if(isCorrect("src/Paroliere/Words.txt",in)){
-                        if(!parole.contains(in)){
+                        if(!words.contains(in)){
                             ris.remove(truee);
-                            parole.add(in);
-                            truee.setText(""+checkScore(in)+"");
+                            words.add(in);
+                            truee.setText("ahahahahaha");
                             ris.add(truee);
                             layout.add(ris);
                             g.add(layout);
-                            frame.add(g);
-
-                            frame.setVisible(true);
+                            add(g);
+                            setVisible(true);
                         }else System.out.println("C'è già stupido");
                     }
                 }
@@ -98,8 +93,8 @@ public class GameTable {
                     ris.add(falsee);
                     layout.add(ris);
                     g.add(layout);
-                    frame.add(g);
-                    frame.setVisible(true);
+                    add(g);
+                    setVisible(true);
                 }
                 input.setText("");
             }
@@ -108,9 +103,9 @@ public class GameTable {
         layout.add(invio);
         g.add(layout);
 
-        frame.add(g);
+        add(g);
 
-        frame.setVisible(true);
+        setVisible(true);
     }
     public static boolean isThere(char[][] grid, String word) {
         for (int i = 0; i < grid.length; i++) {
@@ -158,18 +153,6 @@ public class GameTable {
             e.printStackTrace();
         }
         return false;
-    }
-    public static int checkScore(String word) {
-        int length = word.length(), m = 10;
-        if (length < 3) {
-            return length * m;
-        } else if (length < 5) {
-            return length * m * 2;
-        } else if (length < 7) {
-            return length * m * 3;
-        } else {
-            return length * m * 4;
-        }
     }
 }
 

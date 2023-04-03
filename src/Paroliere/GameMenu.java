@@ -75,7 +75,6 @@ public class GameMenu extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (easyRadioButton.isSelected()) {
                     diff = 1;
-
                 } else if (mediumRadioButton.isSelected()) {
                     diff = 2;
                 } else if (hardRadioButton.isSelected()) {
@@ -87,9 +86,9 @@ public class GameMenu extends JFrame {
                 } else if (mediumSizeRadioButton.isSelected()) {
                     siz = 10;
                 }
-                GameTable u = new GameTable();
-                u.createTable(siz, diff);
-
+                GameTable gTable = new GameTable(siz, diff);
+                GameStats gStats = new GameStats(diff,gTable);
+                dispose();
             }
         });
 
