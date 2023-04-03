@@ -3,6 +3,8 @@ package Paroliere;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class GameEnd extends JFrame {
     private JLabel timeUpLabel;
@@ -10,20 +12,16 @@ public class GameEnd extends JFrame {
     private JButton menuButton;
     private JButton exitButton;
 
-    public GameEnd() {
+    public GameEnd(int score) {
         getRootPane().setBorder(BorderFactory.createLineBorder(Color.BLACK,5));
         setResizable(false);
-        // Impostazione del titolo della finestra
         setTitle("Game End");
 
-        // Impostazione della dimensione della finestra
         setSize(700, 450);
 
-        // Impostazione del layout della finestra
         setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
 
-        // Sezione 1: Etichetta "Oh No, time's up!"
-        timeUpLabel = new JLabel("Oh No, time's up!");
+        timeUpLabel = new JLabel("Oh no! Time's up!");
         timeUpLabel.setFont(new Font("Arial", Font.BOLD, 50));
         timeUpLabel.setAlignmentX(CENTER_ALIGNMENT);
         add(timeUpLabel);
@@ -31,24 +29,21 @@ public class GameEnd extends JFrame {
                 BorderFactory.createEmptyBorder(30, 10, 30, 10),
                 timeUpLabel.getBorder()));
 
-        // Sezione 2: Etichetta "Score: "
-
         JPanel scorePanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         scorePanel.setPreferredSize(new Dimension(450, 150));
         add(scorePanel);
 
-        scoreLabel = new JLabel("1000");
+        scoreLabel = new JLabel(Integer.toString(score));
         scoreLabel.setFont(new Font("Arial", Font.BOLD, 35));
-        scoreLabel.setHorizontalAlignment(SwingConstants.CENTER); //aggiunto
+        scoreLabel.setHorizontalAlignment(SwingConstants.CENTER);
         scorePanel.add(scoreLabel);
 
         scoreLabel.setBorder(BorderFactory.createTitledBorder(
                 BorderFactory.createLineBorder(Color.BLACK, 5), "Score",
                 TitledBorder.CENTER, TitledBorder.TOP,
                 new Font(Font.SANS_SERIF, Font.BOLD, 40), Color.BLACK));
-
         scoreLabel.setPreferredSize(scorePanel.getPreferredSize());
-        // Sezione 3: Pulsanti "Menu" e "Exit"
+
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout());
         menuButton = new JButton("Menu");
@@ -57,8 +52,25 @@ public class GameEnd extends JFrame {
         menuButton.setForeground(Color.WHITE);
         exitButton.setBackground(Color.BLACK);
         exitButton.setForeground(Color.WHITE);
-        menuButton.setPreferredSize(new Dimension(200, 50));
-        exitButton.setPreferredSize(new Dimension(200, 50));
+        menuButton.setPreferredSize(new Dimension(200, 55));
+        exitButton.setPreferredSize(new Dimension(200, 55));
+
+        menuButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GameMenu gMenu = new GameMenu();
+                gMenu.setVisible(true);
+                dispose();
+            }
+        });
+
+        exitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+
         buttonPanel.add(menuButton);
         buttonPanel.add(exitButton);
         add(buttonPanel);
@@ -66,7 +78,6 @@ public class GameEnd extends JFrame {
                 BorderFactory.createEmptyBorder(30, 10, 30, 10),
                 buttonPanel.getBorder()));
 
-        // Impostazione della finestra
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);

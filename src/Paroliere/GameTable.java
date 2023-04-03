@@ -18,14 +18,15 @@ public class GameTable extends JFrame{
     public GameTable(final int size, final int diff){
         super("GameTable");
 
-        setBackground(Color.black);
+        GameStats gStats = new GameStats(diff,this);
+        setBackground(Color.WHITE);
         JPanel layout = new JPanel();
         Border bordo = BorderFactory.createEmptyBorder(40,0,0,0);
         JPanel g = new JPanel(new GridLayout(1, 1,0,0 ));
         JPanel table = new JPanel(new GridLayout(size, size, 1, 1));
-        table.setBackground(Color.black);
-        g.setBackground(Color.black);
-        layout.setBackground(Color.black);
+        table.setBackground(Color.WHITE);
+        g.setBackground(Color.WHITE);
+        layout.setBackground(Color.WHITE);
 
         if(size == 5){
             setSize(450, 475);
@@ -41,6 +42,7 @@ public class GameTable extends JFrame{
         char[][] grid = new char[size][size];
         Random r = new Random();
 
+        UIManager.put("Button.disabledText", Color.WHITE);
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[i].length; j++) {
                 char c = (char) (r.nextInt(26) + 'a');
@@ -48,59 +50,54 @@ public class GameTable extends JFrame{
                 JButton button = new JButton(String.valueOf(c));
                 button.setPreferredSize(new Dimension(50, 50));
                 button.setBorder(BorderFactory.createLineBorder(Color.BLACK,1));
+                button.setBackground(Color.BLACK);
                 table.add(button);
                 button.setEnabled(false);
             }
         }
-
         layout.add(table);
+
         JPanel in = new JPanel();
         JPanel ris = new JPanel();
         JPanel risultato = new JPanel();
         JTextField input = new JTextField();
         input.setColumns(20);
-        in.setBackground(Color.black);
-        input.setPreferredSize(new Dimension(200, 24));
-        in.setBorder(new EmptyBorder(50, 0, 50, 10));
+        input.setPreferredSize(new Dimension(200, 40));
+        input.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createLineBorder(Color.BLACK, 3),
+                BorderFactory.createEmptyBorder(0, 10, 3, 0)
+        ));
+        input.setBackground(Color.WHITE);
+        input.setForeground(Color.BLACK);
+        Font font = input.getFont().deriveFont(15f);
+        input.setFont(font);
+        in.setBackground(Color.WHITE);
         in.add(input);
         layout.add(in);
 
-        JButton invio = new JButton(" Vai ");
-        invio.setPreferredSize(new Dimension(60, 20));
-        invio.addActionListener(new ActionListener() {
+
+
+        JButton send = new JButton("Send");
+        send.setPreferredSize(new Dimension(100, 40));
+        send.setBackground(Color.BLACK);
+        send.setForeground(Color.WHITE);
+        send.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String in = input.getText();
-                JLabel truee = new JLabel();
-                JLabel falsee = new JLabel();
                 if (isThere(grid, in)) {
                     if(isCorrect("src/Paroliere/Words.txt",in)){
                         if(!words.contains(in)){
-                            ris.remove(truee);
                             words.add(in);
-                            truee.setText("ahahahahaha");
-                            ris.add(truee);
-                            layout.add(ris);
-                            g.add(layout);
-                            add(g);
-                            setVisible(true);
-                        }else System.out.println("C'è già stupido");
+                            GameStats.WordListPanel.addWord(in);
+                        }
                     }
-                }
-                else {
-                    ris.remove(falsee);
-                    falsee.setText("Testo Non Trovato !");
-                    ris.add(falsee);
-                    layout.add(ris);
-                    g.add(layout);
-                    add(g);
-                    setVisible(true);
                 }
                 input.setText("");
             }
         });
 
-        layout.add(invio);
+        layout.add(send);
         g.add(layout);
 
         add(g);

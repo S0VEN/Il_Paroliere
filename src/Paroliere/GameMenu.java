@@ -18,11 +18,11 @@ public class GameMenu extends JFrame {
         titlePanel.setBackground(Color.WHITE);
         JLabel titleLabel = new JLabel("IL PAROLIERE");
         titleLabel.setFont(new Font("Arial", Font.BOLD, 50));
+        titlePanel.setMaximumSize(new Dimension(700,250));
         titlePanel.add(titleLabel);
 
         JPanel difficultyPanel = new JPanel();
-        difficultyPanel.setPreferredSize(new Dimension(450, 150));
-        difficultyPanel.setMaximumSize(new Dimension(450, 150));
+        difficultyPanel.setMaximumSize(new Dimension(450, 175));
         difficultyPanel.setBackground(Color.WHITE);
         difficultyPanel.setBorder(BorderFactory.createTitledBorder(
                 BorderFactory.createLineBorder(Color.BLACK, 5), "Difficulty",
@@ -32,26 +32,27 @@ public class GameMenu extends JFrame {
 
         ButtonGroup difficultyGroup = new ButtonGroup();
         JRadioButton easyRadioButton = new JRadioButton("Easy");
-        easyRadioButton.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 20));
-        easyRadioButton.setPreferredSize(new Dimension(125, 30));
-
+        easyRadioButton.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 15));
+        easyRadioButton.setPreferredSize(new Dimension(100, 25));
+        easyRadioButton.setBackground(Color.WHITE);
 
         JRadioButton mediumRadioButton = new JRadioButton("Normal");
-        mediumRadioButton.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 20));
-        mediumRadioButton.setPreferredSize(new Dimension(125, 30));
-
+        mediumRadioButton.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 15));
+        mediumRadioButton.setPreferredSize(new Dimension(100, 25));
+        mediumRadioButton.setBackground(Color.WHITE);
 
 
         JRadioButton hardRadioButton = new JRadioButton("Hard");
-        hardRadioButton.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 20));
-        hardRadioButton.setPreferredSize(new Dimension(125, 30));
-
+        hardRadioButton.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 15));
+        hardRadioButton.setPreferredSize(new Dimension(100, 25));
+        hardRadioButton.setBackground(Color.WHITE);
 
         difficultyPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
         difficultyGroup.add(easyRadioButton);
         difficultyGroup.add(mediumRadioButton);
         difficultyGroup.add(hardRadioButton);
         difficultyGroup.setSelected(mediumRadioButton.getModel(), true);
+
         JPanel difficultyRadioButtonPanel = new JPanel(new GridLayout(1, 3));
         difficultyRadioButtonPanel.setBackground(Color.WHITE);
         difficultyRadioButtonPanel.add(easyRadioButton);
@@ -63,14 +64,25 @@ public class GameMenu extends JFrame {
         difficultyPanel.add(emptyDifficultyPanel);
 
         JPanel sizePanel = new JPanel();
+        sizePanel.setMaximumSize(new Dimension(450, 175));
         sizePanel.setBackground(Color.WHITE);
-        JLabel sizeLabel = new JLabel("Seleziona la dimensione");
-        sizeLabel.setFont(new Font("Arial", Font.BOLD, 13));
-        sizePanel.add(sizeLabel);
+        sizePanel.setBorder(BorderFactory.createTitledBorder(
+                BorderFactory.createLineBorder(Color.BLACK, 5), "Size",
+                TitledBorder.CENTER, TitledBorder.TOP,
+                new Font(Font.SANS_SERIF, Font.BOLD, 30), Color.BLACK));
 
         ButtonGroup sizeGroup = new ButtonGroup();
+
         JRadioButton smallRadioButton = new JRadioButton("5x5");
+        smallRadioButton.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 15));
+        smallRadioButton.setPreferredSize(new Dimension(100, 25));
+        smallRadioButton.setBackground(Color.WHITE);
+
         JRadioButton mediumSizeRadioButton = new JRadioButton("10x10");
+        mediumSizeRadioButton.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 15));
+        mediumSizeRadioButton.setPreferredSize(new Dimension(100, 25));
+        mediumSizeRadioButton.setBackground(Color.WHITE);
+
         sizeGroup.add(smallRadioButton);
         sizeGroup.add(mediumSizeRadioButton);
         sizeGroup.setSelected(mediumSizeRadioButton.getModel(), true);
@@ -87,10 +99,14 @@ public class GameMenu extends JFrame {
         buttonPanel.setBackground(Color.WHITE);
         JButton startButton = new JButton("Start");
         JButton statsButton = new JButton("Stats");
+        startButton.setBackground(Color.BLACK);
+        startButton.setForeground(Color.WHITE);
+        statsButton.setBackground(Color.BLACK);
+        statsButton.setForeground(Color.WHITE);
+        startButton.setPreferredSize(new Dimension(200, 55));
+        statsButton.setPreferredSize(new Dimension(200, 55));
         buttonPanel.add(startButton);
         buttonPanel.add(statsButton);
-        startButton.setPreferredSize(new Dimension(200, 50));
-        statsButton.setPreferredSize(new Dimension(200, 50));
         startButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if (easyRadioButton.isSelected()) {
@@ -107,7 +123,6 @@ public class GameMenu extends JFrame {
                     siz = 10;
                 }
                 GameTable gTable = new GameTable(siz, diff);
-                GameStats gStats = new GameStats(diff,gTable);
                 dispose();
             }
         });
@@ -124,7 +139,7 @@ public class GameMenu extends JFrame {
         contentPane.add(buttonPanel);
         contentPane.add(Box.createRigidArea(new Dimension(0, 50)));
 
-        setSize(700, 500);
+        setSize(700, 600);
         setResizable(false);
 
         setLocationRelativeTo(null);

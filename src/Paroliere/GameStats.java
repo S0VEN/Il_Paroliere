@@ -6,15 +6,16 @@ import javax.swing.*;
 import javax.swing.border.TitledBorder;
 
 public class GameStats extends JFrame {
-    ArrayList<String> words = new ArrayList<String>();
-    public int score = 0;
-    private TimerPanel timerPanel;
-    private ScorePanel scorePanel;
-    private WordListPanel wordListPanel;
+    public static int score = 0;
+    public static TimerPanel timerPanel;
+    public static ScorePanel scorePanel;
+    public WordListPanel wordListPanel;
 
     public GameStats(int diff, GameTable gTable) {
         super("GameStats");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        getRootPane().setBorder(BorderFactory.createLineBorder(Color.BLACK,5));
+        setResizable(false);
 
         int score = 0;
         ArrayList<String> words = new ArrayList<String>();
@@ -44,13 +45,17 @@ public class GameStats extends JFrame {
         Point framePosition = new Point(screenSize.width - frameWidth - 100, screenSize.height - frameHeight - 200);
         setLocation(framePosition);
 
+        getContentPane().setBackground(Color.WHITE);
+        setBackground(Color.WHITE);
+        timerPanel.setBackground(Color.WHITE);
+        scorePanel.setBackground(Color.WHITE);
+        wordListPanel.setBackground(Color.WHITE);
+        timerPanel.timerLabel.setBackground(Color.WHITE);
+        scorePanel.scoreLabel.setBackground(Color.WHITE);
+        wordListPanel.wordList.setBackground(Color.WHITE);
+
         setVisible(true);
 
-    }
-
-    public void setStats(String word){
-        words.add(word);
-        score = score + checkScore(word);
     }
     public static int checkScore(String word) {
         int length = word.length(), m = 10;
@@ -68,88 +73,94 @@ public class GameStats extends JFrame {
     private class TimerPanel extends JPanel {
         private JLabel timerLabel;
         private Timer timer;
-        private int count;
+        public int count;
 
         public TimerPanel(int diff, GameTable gTable) {
-            setPreferredSize(new Dimension(200, 70));
+            setPreferredSize(new Dimension(250, 100));
 
             setLayout(new FlowLayout(FlowLayout.CENTER));
 
             if(diff == 1) count = 120;
             if (diff == 2) count = 75;
-            if (diff == 3) count = 1;
+            if (diff == 3) count = 30;
 
-            timerLabel = new JLabel("Timer: 00:00");
+            timerLabel = new JLabel("00:00");
             timerLabel.setBorder(BorderFactory.createCompoundBorder(
-                    BorderFactory.createEmptyBorder(30, 10, 30, 10),
-                    timerLabel.getBorder()));
+                    BorderFactory.createLineBorder(Color.BLACK, 5),
+                    BorderFactory.createEmptyBorder(5, 10, 5, 10)
+            ));
+            timerLabel.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 20));
+
             timer = new Timer(1000, e -> {
-                if (count == 0){
+                if (count == 0) {
                     dispose();
                     gTable.dispose();
-                    GameEnd gEnd = new GameEnd();
+                    GameEnd gEnd = new GameEnd(score);
                     timer.stop();
-                }else {
+                } else {
                     count--;
                     int minutes = count / 60;
                     int seconds = count % 60;
                     String timeString = String.format("%02d:%02d", minutes, seconds);
-                    timerLabel.setText("Timer: " + timeString);
+                    timerLabel.setText(timeString);
                 }
             });
             timer.start();
 
             add(timerLabel);
-
-            timerLabel.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 20));
         }
     }
 
-    private class ScorePanel extends JPanel {
+
+    public class ScorePanel extends JPanel {
         private JLabel scoreLabel;
 
         public ScorePanel() {
-            setPreferredSize(new Dimension(300, 100));
+            setLayout(new GridLayout(1, 1));
+            setMaximumSize(new Dimension(200, 100));
 
-            setLayout(new FlowLayout(FlowLayout.CENTER));
-
-            scoreLabel = new JLabel("Score: 0");
+            scoreLabel = new JLabel("0");
+            scoreLabel.setFont(new Font("Arial", Font.PLAIN, 30));
+            scoreLabel.setHorizontalAlignment(SwingConstants.CENTER);
+            scoreLabel.setPreferredSize(new Dimension(150, 100));
 
             add(scoreLabel);
 
-            scoreLabel.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 20));
+            scoreLabel.setBorder(BorderFactory.createTitledBorder(
+                    BorderFactory.createLineBorder(Color.BLACK, 5), "Score",
+                    TitledBorder.CENTER, TitledBorder.TOP,
+                    new Font(Font.SANS_SERIF, Font.BOLD, 25), Color.BLACK));
+        }
+
+
+    public void updateScore(int score) {
+            scoreLabel.setText(Integer.toString(score));
         }
     }
-
     public class WordListPanel extends JPanel {
-        private JList<String> wordList;
+        private static JList<String> wordList;
         private JScrollPane scrollPane;
+        private static ArrayList<String> words;
 
         public WordListPanel() {
             setPreferredSize(new Dimension(400, 500));
             setLayout(new BorderLayout());
 
-            String[] words = {"Lorem", "ipsum", "dolor", "sit", "amet,", "consectetur", "adipiscing", "elit.",
-                    "Sed", "quis", "sem", "vitae", "diam", "tempor", "bibendum.", "Pellentesque",
-                    "et", "sodales", "felis.", "Nulla", "facilisi.", "Vestibulum", "ante", "ipsum",
-                    "primis", "in", "faucibus", "orci", "luctus", "et", "ultrices", "posuere",
-                    "cubilia", "Curae;", "Nulla", "accumsan", "felis", "quis", "nibh", "malesuada",
-                    "ac", "lobortis", "arcu", "dignissim.", "Cras", "at", "nunc", "vel", "erat",
-                    "placerat", "sagittis.", "In", "semper", "tempor", "elit", "ac", "luctus."};
+            words = new ArrayList<>();
 
-            wordList = new JList<>(words);
+            wordList = new JList<>(words.toArray(new String[0]));
             wordList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
             wordList.setAlignmentX(JList.CENTER_ALIGNMENT);
             wordList.setFixedCellHeight(30);
-            wordList.setOpaque(false);
             DefaultListCellRenderer renderer = (DefaultListCellRenderer) wordList.getCellRenderer();
             renderer.setHorizontalAlignment(JLabel.CENTER);
 
             scrollPane = new JScrollPane(wordList);
             scrollPane.setPreferredSize(new Dimension(400, 400));
+            scrollPane.setBackground(Color.WHITE);
 
             scrollPane.setBorder(BorderFactory.createTitledBorder(
-                    BorderFactory.createEtchedBorder(), "Parole Trovate",
+                    BorderFactory.createLineBorder(Color.BLACK, 5), "Parole Trovate",
                     TitledBorder.CENTER, TitledBorder.TOP,
                     new Font(Font.SANS_SERIF, Font.BOLD, 20), Color.BLACK));
 
@@ -159,6 +170,13 @@ public class GameStats extends JFrame {
 
             add(scrollPane);
             wordList.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 20));
+        }
+        public static void addWord(String word) {
+            words.add(word);
+            wordList.setListData(words.toArray(new String[0]));
+            score = score + checkScore(word);
+            scorePanel.updateScore(score);
+            timerPanel.count = timerPanel.count + (word.length() * 5);
         }
     }
 }
