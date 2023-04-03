@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="Implementazione prima versione del sistema di punteggio">
-      <change afterPath="$PROJECT_DIR$/src/Paroliere/GameEnd.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Paroliere/GameStats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Paroliere/GameMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/GameMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Paroliere/GameTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/GameTable.java" afterDir="false" />
-    </list>
+    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="Implementazione schermata di visualizzazione dello &quot;stato di gioco&quot; (score / parole trovate / timer)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -176,7 +170,7 @@
       <workItem from="1679576916096" duration="2945000" />
       <workItem from="1679650705803" duration="84000" />
       <workItem from="1679993913502" duration="5782000" />
-      <workItem from="1680506370581" duration="8592000" />
+      <workItem from="1680506370581" duration="8971000" />
     </task>
     <task id="LOCAL-00001" summary="Banana">
       <created>1673952451063</created>
@@ -297,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680263958505</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Implementazione schermata di visualizzazione dello &quot;stato di gioco&quot; (score / parole trovate / timer)">
+      <created>1680518103035</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1680518103035</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,7 +340,8 @@
     <MESSAGE value="Aggiunta resize jframe delle dimensioni 5x5 10x10 15x15" />
     <MESSAGE value="Impostazioni delle dimensioni in base al formato della griglia" />
     <MESSAGE value="Implementazione prima versione del sistema di punteggio" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementazione prima versione del sistema di punteggio" />
+    <MESSAGE value="Implementazione schermata di visualizzazione dello &quot;stato di gioco&quot; (score / parole trovate / timer)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementazione schermata di visualizzazione dello &quot;stato di gioco&quot; (score / parole trovate / timer)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
