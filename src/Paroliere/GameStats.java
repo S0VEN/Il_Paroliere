@@ -77,7 +77,7 @@ public class GameStats extends JFrame {
 
             if(diff == 1) count = 120;
             if (diff == 2) count = 75;
-            if (diff == 3) count = 5;
+            if (diff == 3) count = 1;
 
             timerLabel = new JLabel("Timer: 00:00");
             timerLabel.setBorder(BorderFactory.createCompoundBorder(
@@ -87,6 +87,8 @@ public class GameStats extends JFrame {
                 if (count == 0){
                     dispose();
                     gTable.dispose();
+                    GameEnd gEnd = new GameEnd();
+                    timer.stop();
                 }else {
                     count--;
                     int minutes = count / 60;

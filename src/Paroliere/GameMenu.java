@@ -4,30 +4,50 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
 
 public class GameMenu extends JFrame {
     public int diff, siz;
     public GameMenu() {
         setTitle("Il paroliere");
-
+        getRootPane().setBorder(BorderFactory.createLineBorder(Color.BLACK,5));
+        setResizable(false);
         getContentPane().setBackground(Color.WHITE);
 
         JPanel titlePanel = new JPanel();
         titlePanel.setBackground(Color.WHITE);
         JLabel titleLabel = new JLabel("IL PAROLIERE");
-        titleLabel.setFont(new Font("Arial", Font.BOLD, 40));
+        titleLabel.setFont(new Font("Arial", Font.BOLD, 50));
         titlePanel.add(titleLabel);
 
         JPanel difficultyPanel = new JPanel();
+        difficultyPanel.setPreferredSize(new Dimension(450, 150));
+        difficultyPanel.setMaximumSize(new Dimension(450, 150));
         difficultyPanel.setBackground(Color.WHITE);
-        JLabel difficultyLabel = new JLabel("Seleziona la difficoltà");
-        difficultyLabel.setFont(new Font("Arial", Font.BOLD, 13));
-        difficultyPanel.add(difficultyLabel);
+        difficultyPanel.setBorder(BorderFactory.createTitledBorder(
+                BorderFactory.createLineBorder(Color.BLACK, 5), "Difficulty",
+                TitledBorder.CENTER, TitledBorder.TOP,
+                new Font(Font.SANS_SERIF, Font.BOLD, 30), Color.BLACK));
+
 
         ButtonGroup difficultyGroup = new ButtonGroup();
-        JRadioButton easyRadioButton = new JRadioButton("Facile");
-        JRadioButton mediumRadioButton = new JRadioButton("Medio");
-        JRadioButton hardRadioButton = new JRadioButton("Difficile");
+        JRadioButton easyRadioButton = new JRadioButton("Easy");
+        easyRadioButton.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 20));
+        easyRadioButton.setPreferredSize(new Dimension(125, 30));
+
+
+        JRadioButton mediumRadioButton = new JRadioButton("Normal");
+        mediumRadioButton.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 20));
+        mediumRadioButton.setPreferredSize(new Dimension(125, 30));
+
+
+
+        JRadioButton hardRadioButton = new JRadioButton("Hard");
+        hardRadioButton.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 20));
+        hardRadioButton.setPreferredSize(new Dimension(125, 30));
+
+
+        difficultyPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
         difficultyGroup.add(easyRadioButton);
         difficultyGroup.add(mediumRadioButton);
         difficultyGroup.add(hardRadioButton);
