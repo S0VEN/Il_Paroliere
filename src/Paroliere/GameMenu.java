@@ -142,5 +142,5 @@ public class GameMenu extends JFrame {
         setResizable(false);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
+}
 }

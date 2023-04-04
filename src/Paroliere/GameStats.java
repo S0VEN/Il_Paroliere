@@ -44,7 +44,6 @@ public class GameStats extends JFrame {
         int frameHeight = getHeight();
         Point framePosition = new Point(screenSize.width - frameWidth - 100, screenSize.height - frameHeight - 200);
         setLocation(framePosition);
-
         getContentPane().setBackground(Color.WHITE);
         setBackground(Color.WHITE);
         timerPanel.setBackground(Color.WHITE);
@@ -133,7 +132,7 @@ public class GameStats extends JFrame {
         }
 
 
-    public void updateScore(int score) {
+        public void updateScore(int score) {
             scoreLabel.setText(Integer.toString(score));
         }
     }
@@ -180,4 +179,3 @@ public class GameStats extends JFrame {
         }
     }
 }
-

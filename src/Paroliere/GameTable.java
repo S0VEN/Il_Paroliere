@@ -26,6 +26,12 @@ public class GameTable extends JFrame{
         JPanel table = new JPanel(new GridLayout(size, size, 1, 1));
         table.setBackground(Color.WHITE);
         g.setBackground(Color.WHITE);
+        setLocationRelativeTo(null);
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int frameWidth = getWidth();
+        int frameHeight = getHeight();
+        Point framePosition = new Point(screenSize.width -1500, screenSize.height -900);
+        setLocation(framePosition);
         layout.setBackground(Color.WHITE);
 
         if(size == 5){
@@ -149,7 +155,5 @@ public class GameTable extends JFrame{
             e.printStackTrace();
         }
         return false;
-    }
 }
-
-
+}
