@@ -85,4 +85,5 @@ public class GameEnd extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
 }
+
 }

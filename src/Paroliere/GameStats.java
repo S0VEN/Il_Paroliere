@@ -178,4 +178,5 @@ public class GameStats extends JFrame {
             timerPanel.count = timerPanel.count + (word.length() * 5);
         }
     }
+
 }

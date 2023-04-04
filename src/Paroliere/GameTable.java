@@ -160,6 +160,7 @@ public class GameTable extends JFrame{
         return false;
 }
 int getWords(){
+        
         return words.size();
 }
     int getSiz(){
