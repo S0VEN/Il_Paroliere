@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="Implementazione schermata di visualizzazione dello &quot;stato di gioco&quot; (score / parole trovate / timer)">
+    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="Riposizionamento griglia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Paroliere/GameEnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/GameEnd.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Paroliere/GameMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/GameMenu.java" afterDir="false" />
@@ -180,7 +180,7 @@
       <workItem from="1680530552128" duration="7823000" />
       <workItem from="1680589850351" duration="88000" />
       <workItem from="1680589970398" duration="244000" />
-      <workItem from="1680596432890" duration="538000" />
+      <workItem from="1680596432890" duration="2459000" />
     </task>
     <task id="LOCAL-00001" summary="Banana">
       <created>1673952451063</created>
@@ -322,7 +322,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680537605745</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Riposizionamento griglia">
+      <created>1680597013308</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1680597013308</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,6 +373,18 @@
     <MESSAGE value="Implementazione prima versione del sistema di punteggio" />
     <MESSAGE value="Implementazione schermata di visualizzazione dello &quot;stato di gioco&quot; (score / parole trovate / timer)" />
     <MESSAGE value="Implementazione meccaniche di gioco come il calcolo del punteggio, aggiunta di tempo in base alla parola trovata e elenco delle parole trovate" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementazione meccaniche di gioco come il calcolo del punteggio, aggiunta di tempo in base alla parola trovata e elenco delle parole trovate" />
+    <MESSAGE value="Riposizionamento griglia" />
+    <option name="LAST_COMMIT_MESSAGE" value="Riposizionamento griglia" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Paroliere/GameTable.java</url>
+          <line>159</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

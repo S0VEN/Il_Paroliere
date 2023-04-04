@@ -14,10 +14,11 @@ import java.util.ArrayList;
 
 
 public class GameTable extends JFrame{
-    public static int t = 10;
+    public  static int siz = 0;
+    ArrayList<String> words = new ArrayList<String>();
     public GameTable(final int size, final int diff){
         super("GameTable");
-
+        siz = size;
         GameStats gStats = new GameStats(diff,this);
         setBackground(Color.WHITE);
         JPanel layout = new JPanel();
@@ -26,25 +27,27 @@ public class GameTable extends JFrame{
         JPanel table = new JPanel(new GridLayout(size, size, 1, 1));
         table.setBackground(Color.WHITE);
         g.setBackground(Color.WHITE);
-        setLocationRelativeTo(null);
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int frameWidth = getWidth();
-        int frameHeight = getHeight();
-        Point framePosition = new Point(screenSize.width -1500, screenSize.height -900);
-        setLocation(framePosition);
+
         layout.setBackground(Color.WHITE);
 
         if(size == 5){
             setSize(450, 475);
+            setLocationRelativeTo(null);
+            Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+            Point framePosition = new Point(screenSize.width -1250, screenSize.height -730);
+            setLocation(framePosition);
         }
         else if (size == 10){
             setSize(700, 725);
+            setLocationRelativeTo(null);
+            Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+            Point framePosition = new Point(screenSize.width -1400, screenSize.height -840);
+            setLocation(framePosition);
         }
 
         getRootPane().setBorder(bordo);
         setResizable(false);
 
-        ArrayList<String> words = new ArrayList<String>();
         char[][] grid = new char[size][size];
         Random r = new Random();
 
@@ -156,4 +159,11 @@ public class GameTable extends JFrame{
         }
         return false;
 }
+int getWords(){
+        return words.size();
+}
+    int getSiz(){
+        return siz;
+    }
+
 }

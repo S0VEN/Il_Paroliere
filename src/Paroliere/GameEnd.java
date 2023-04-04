@@ -5,6 +5,8 @@ import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
+
 
 public class GameEnd extends JFrame {
     private JLabel timeUpLabel;
@@ -12,10 +14,12 @@ public class GameEnd extends JFrame {
     private JButton menuButton;
     private JButton exitButton;
 
-    public GameEnd(int score) {
+    public GameEnd(int score, int nWordsi, int diff, int size) {
         getRootPane().setBorder(BorderFactory.createLineBorder(Color.BLACK,5));
         setResizable(false);
         setTitle("Game End");
+        LocalDate oggi = LocalDate.now();
+        String dataStringa = oggi.toString();
 
         setSize(700, 450);
 

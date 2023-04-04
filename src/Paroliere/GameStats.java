@@ -42,7 +42,7 @@ public class GameStats extends JFrame {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int frameWidth = getWidth();
         int frameHeight = getHeight();
-        Point framePosition = new Point(screenSize.width - frameWidth - 100, screenSize.height - frameHeight - 200);
+        Point framePosition = new Point(screenSize.width - frameWidth - 130, screenSize.height - frameHeight - 200);
         setLocation(framePosition);
         getContentPane().setBackground(Color.WHITE);
         setBackground(Color.WHITE);
@@ -94,7 +94,7 @@ public class GameStats extends JFrame {
                 if (count == 0) {
                     dispose();
                     gTable.dispose();
-                    GameEnd gEnd = new GameEnd(score);
+                    GameEnd gEnd = new GameEnd(score,gTable.getWords(),diff,gTable.getSiz());
                     score = 0;
                     timer.stop();
                 } else {

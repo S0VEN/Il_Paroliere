@@ -143,4 +143,5 @@ public class GameMenu extends JFrame {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 }
+
 }
