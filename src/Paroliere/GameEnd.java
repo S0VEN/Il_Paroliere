@@ -14,12 +14,18 @@ public class GameEnd extends JFrame {
     private JButton menuButton;
     private JButton exitButton;
 
-    public GameEnd(int score, int nWordsi, int diff, int size) {
+    public GameEnd(int score, int nWords, int diffi, int size) {
+        MySQLConnection conn = new MySQLConnection();
+        conn.Connection();
+
         getRootPane().setBorder(BorderFactory.createLineBorder(Color.BLACK,5));
         setResizable(false);
         setTitle("Game End");
         LocalDate oggi = LocalDate.now();
         String dataStringa = oggi.toString();
+
+        //AGGIUNTA DATI FINE GIOCO NEL DATABASE
+        conn.Add(score,nWords,diffi,size,dataStringa);
 
         setSize(700, 450);
 
@@ -63,6 +69,7 @@ public class GameEnd extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 GameMenu gMenu = new GameMenu();
+
                 gMenu.setVisible(true);
                 dispose();
             }

@@ -3,13 +3,16 @@ package Paroliere;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.*;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
+import javax.swing.table.DefaultTableModel;
 
 public class GameMenu extends JFrame {
     public int diff, siz;
     public GameMenu() {
         setTitle("Il paroliere");
+
         getRootPane().setBorder(BorderFactory.createLineBorder(Color.BLACK,5));
         setResizable(false);
         getContentPane().setBackground(Color.WHITE);
@@ -126,6 +129,85 @@ public class GameMenu extends JFrame {
                 dispose();
             }
         });
+
+        statsButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                MySQLConnection conn = new MySQLConnection();
+                conn.Connection();
+                String query = "SELECT * FROM Stats";
+
+                DefaultTableModel model = new DefaultTableModel();
+                Statement stmt = null;
+                try {
+                    stmt = conn.conne().createStatement();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                ResultSet rs = null;
+                try {
+                    rs = stmt.executeQuery(query);
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                ResultSetMetaData meta = null;
+                try {
+                    meta = rs.getMetaData();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                int numCols = 0;
+                try {
+                    numCols = meta.getColumnCount();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+
+// Aggiungi le colonne al modello
+                for (int i = 1; i <= numCols; i++) {
+                    String colName = null;
+                    try {
+                        colName = meta.getColumnName(i);
+                    } catch (SQLException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                    model.addColumn(colName);
+                }
+
+// Aggiungi le righe al modello
+                while (true) {
+                    try {
+                        if (!rs.next()) break;
+                    } catch (SQLException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                    Object[] row = new Object[numCols];
+                    for (int i = 1; i <= numCols; i++) {
+                        try {
+                            row[i - 1] = rs.getObject(i);
+                        } catch (SQLException ex) {
+                            throw new RuntimeException(ex);
+                        }
+                    }
+                    model.addRow(row);
+                }
+
+// Chiudi la connessione al database
+                try {
+                    rs.close();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                try {
+                    stmt.close();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+
+                conn.Get(model);
+            }
+        });
+
+
         Container contentPane = getContentPane();
         contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.Y_AXIS));
         contentPane.add(Box.createRigidArea(new Dimension(0, 50)));

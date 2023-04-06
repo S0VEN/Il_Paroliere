@@ -34,6 +34,9 @@
       <root url="jar://$USER_HOME$/Downloads/repository/plugins/org.eclipse.wb.rcp_1.9.1.202210231159.jar!/" />
       <root url="jar://$USER_HOME$/Downloads/repository/plugins/org.eclipse.wb.swing_1.9.1.202210231159.jar!/" />
       <root url="jar://$USER_HOME$/Downloads/repository/plugins/org.eclipse.wb.swt.widgets.baseline_1.9.1.202210231159.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../mysql-connector-j-8.0.32/mysql-connector-j-8.0.32/mysql-connector-j-8.0.32.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/mariadb-java-client-3.1.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/mysql-connector-j-8.0.32.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

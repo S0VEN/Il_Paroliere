@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Il Paroliere:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Il_Paroliere_jar</output-path>
+    <root id="archive" name="Il Paroliere.jar">
+      <element id="module-output" name="Il Paroliere" />
+      <element id="library" level="project" name="org.eclipse.wb.swing.java6_1.9.1.202210231159" />
+    </root>
+  </artifact>
+</component>
