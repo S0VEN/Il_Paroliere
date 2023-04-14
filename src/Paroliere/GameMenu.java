@@ -109,6 +109,8 @@ public class GameMenu extends JFrame {
         startButton.setPreferredSize(new Dimension(200, 55));
         statsButton.setPreferredSize(new Dimension(200, 55));
         buttonPanel.add(startButton);
+
+        
         buttonPanel.add(statsButton);
         startButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
