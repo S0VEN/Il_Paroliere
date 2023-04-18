@@ -175,7 +175,7 @@ public class GameStats extends JFrame {
             wordList.setListData(words.toArray(new String[0]));
             score = score + checkScore(word);
             scorePanel.updateScore(score);
-            timerPanel.count = timerPanel.count + (word.length() * 5);
+            timerPanel.count = timerPanel.count + (word.length() * 3);
         }
     }
 

@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="Aggiunta messaggi di errore">
+    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="Riposizionamento griglia">
+      <change afterPath="$PROJECT_DIR$/src/Paroliere/RoundedBorder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Paroliere/GameStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/GameStats.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Paroliere/GameTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/GameTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -326,14 +328,7 @@
       <option name="project" value="LOCAL" />
       <updated>1680597013308</updated>
     </task>
-    <task id="LOCAL-00022" summary="Aggiunta messaggi di errore">
-      <created>1681801814920</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1681801814920</updated>
-    </task>
-    <option name="localTasksCounter" value="23" />
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,7 +373,6 @@
     <MESSAGE value="Implementazione schermata di visualizzazione dello &quot;stato di gioco&quot; (score / parole trovate / timer)" />
     <MESSAGE value="Implementazione meccaniche di gioco come il calcolo del punteggio, aggiunta di tempo in base alla parola trovata e elenco delle parole trovate" />
     <MESSAGE value="Riposizionamento griglia" />
-    <MESSAGE value="Aggiunta messaggi di errore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta messaggi di errore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Riposizionamento griglia" />
   </component>
 </project>

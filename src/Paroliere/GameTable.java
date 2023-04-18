@@ -11,14 +11,16 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.ArrayList;
-
+import javax.swing.border.*;
 
 public class GameTable extends JFrame{
     public  static int siz = 0;
     ArrayList<String> words = new ArrayList<String>();
     public GameTable(final int size, final int diff){
+
         super("GameTable");
         siz = size;
+
         GameStats gStats = new GameStats(diff,this);
         setBackground(Color.WHITE);
         JPanel layout = new JPanel();
@@ -59,8 +61,10 @@ public class GameTable extends JFrame{
                 grid[i][j] = c;
                 JButton button = new JButton(String.valueOf(c));
                 button.setPreferredSize(new Dimension(50, 50));
-                button.setBorder(BorderFactory.createLineBorder(Color.BLACK,1));
-                button.setBackground(Color.BLACK);
+                button.setBorder(BorderFactory.createEmptyBorder());
+                button.setBorder(new RoundedBorder(Color.black, 10,true));
+
+                UIManager.put("Button.disabledText", Color.BLACK);
                 table.add(button);
                 button.setEnabled(false);
             }
@@ -68,14 +72,15 @@ public class GameTable extends JFrame{
         layout.add(table);
 
         JPanel in = new JPanel();
-        JPanel ris = new JPanel();
-        JPanel risultato = new JPanel();
         JTextField input = new JTextField();
         input.setColumns(20);
         input.setPreferredSize(new Dimension(200, 40));
-        input.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createLineBorder(Color.BLACK, 3),
-                BorderFactory.createEmptyBorder(0, 10, 3, 0)
+        input.setBorder(new RoundedBorder(Color.black, 10,true));
+        input.setHorizontalAlignment(SwingConstants.CENTER);
+        input.setFont(new Font("Arial", Font.BOLD, 16));
+        in.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createLineBorder(Color.white, 0),
+                BorderFactory.createEmptyBorder(30, 10, 3, 0)
         ));
         input.setBackground(Color.WHITE);
         input.setForeground(Color.BLACK);
@@ -84,32 +89,44 @@ public class GameTable extends JFrame{
         in.setBackground(Color.WHITE);
         in.add(input);
         layout.add(in);
-
+        JPanel o = new JPanel();
         JButton send = new JButton("Send");
         send.setPreferredSize(new Dimension(100, 40));
         send.setBackground(Color.BLACK);
         send.setForeground(Color.WHITE);
+        send.setBorder(new RoundedBorder(Color.black, 10,false));
+        o.setBackground(Color.white);
+        o.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createLineBorder(Color.white, 0),
+                BorderFactory.createEmptyBorder(30, 10, 3, 0)
+        ));
+        o.add(send);
+
         send.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String in = input.getText();
-                if (isThere(grid, in)) {
-                    if(isCorrect("src/Paroliere/Words.txt",in)){
-                        if(!words.contains(in)){
-                            words.add(in);
-                            GameStats.WordListPanel.addWord(in);
+                if (in.equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sembra che ' ' non sia una parola!", "Oh oh...", JOptionPane.WARNING_MESSAGE);
+
+                } else {
+                    if (isThere(grid, in)) {
+                        if (isCorrect("src/Paroliere/Words.txt", in)) {
+                            if (!words.contains(in)) {
+                                words.add(in);
+                                GameStats.WordListPanel.addWord(in);
+                            } else {
+                                JOptionPane.showMessageDialog(null, "Sembra che tu abbia già trovato la parola '" + in + "'!", "Oh oh...", JOptionPane.WARNING_MESSAGE);
+                            }
                         } else {
-                            JOptionPane.showMessageDialog(null, "Sembra che tu abbia già trovato la parola '"+ in +"'!", "Oh oh...", JOptionPane.WARNING_MESSAGE);
+                            JOptionPane.showMessageDialog(null, "Sembra che la parola '" + in + "' non esista!", "Oh oh...", JOptionPane.WARNING_MESSAGE);
                         }
                     } else {
-                        JOptionPane.showMessageDialog(null, "Sembra che la parola '" + in + "' non esista!", "Oh oh...", JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Sembra che la parola '" + in + "' non sia presente nella tabella!", "Oh oh...", JOptionPane.WARNING_MESSAGE);
                     }
-                } else {
-                    JOptionPane.showMessageDialog(null, "Sembra che la parola '" + in + "' non sia presente nella tabella!", "Oh oh...", JOptionPane.WARNING_MESSAGE);
+                    input.setText("");
                 }
-                input.setText("");
             }
-
         });
 
         input.addActionListener(new ActionListener() {
@@ -119,7 +136,7 @@ public class GameTable extends JFrame{
             }
         });
 
-        layout.add(send);
+        layout.add(o);
         g.add(layout);
 
         add(g);
