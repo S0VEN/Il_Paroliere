@@ -112,6 +112,13 @@ public class GameTable extends JFrame{
 
         });
 
+        input.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                send.doClick();
+            }
+        });
+
         layout.add(send);
         g.add(layout);
 
