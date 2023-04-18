@@ -190,9 +190,9 @@ public class GameTable extends JFrame{
             e.printStackTrace();
         }
         return false;
-}
+    }
     int getWords(){
-            return words.size();
+        return words.size();
     }
     int getSiz(){
         return siz;

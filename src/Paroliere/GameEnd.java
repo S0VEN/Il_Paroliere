@@ -21,8 +21,11 @@ public class GameEnd extends JFrame {
         LocalDate oggi = LocalDate.now();
         String dataStringa = oggi.toString();
 
+
         setSize(700, 450);
 
+        MySQLConnection o = new MySQLConnection();
+        o.Add(score,nWordsi,diff,size,dataStringa);
         setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
 
         timeUpLabel = new JLabel("Oh no! Time's up!");
@@ -84,6 +87,6 @@ public class GameEnd extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
-}
+    }
 
 }

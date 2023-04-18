@@ -111,7 +111,6 @@ public class MySQLConnection extends JFrame {
         header.setFont(new Font("Arial", Font.BOLD, 12));
         header.setPreferredSize(new Dimension(30, 50));
 
-
 // Applica il renderer a tutte le colonne del JTable
         for (int i = 0; i < table.getColumnCount(); i++) {
             table.getColumnModel().getColumn(i).setCellRenderer(renderer);
@@ -132,9 +131,10 @@ public class MySQLConnection extends JFrame {
         JScrollPane scrollPane = new JScrollPane(table);
         JFrame frame = new JFrame("Dati della tabella stats");
         frame.add(scrollPane);
-        frame.setSize(600, 400);
+        frame.setSize(800, 450);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+        frame.setResizable(false);
     }
 
     public Connection conne() {

@@ -13,6 +13,9 @@ public class GameMenu extends JFrame {
     public GameMenu() {
         setTitle("Il paroliere");
 
+        MySQLConnection conn = new MySQLConnection();
+        conn.Connection();
+
         getRootPane().setBorder(BorderFactory.createLineBorder(Color.BLACK,5));
         setResizable(false);
         getContentPane().setBackground(Color.WHITE);
