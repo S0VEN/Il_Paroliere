@@ -28,6 +28,7 @@ public class GameTable extends JFrame{
         table.setBackground(Color.WHITE);
         g.setBackground(Color.WHITE);
 
+
         layout.setBackground(Color.WHITE);
 
         if(size == 5){
@@ -97,11 +98,18 @@ public class GameTable extends JFrame{
                         if(!words.contains(in)){
                             words.add(in);
                             GameStats.WordListPanel.addWord(in);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Sembra che tu abbia già trovato la parola '"+ in +"'!", "Oh oh...", JOptionPane.WARNING_MESSAGE);
                         }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Sembra che la parola '" + in + "' non esista!", "Oh oh...", JOptionPane.WARNING_MESSAGE);
                     }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Sembra che la parola '" + in + "' non sia presente nella tabella!", "Oh oh...", JOptionPane.WARNING_MESSAGE);
                 }
                 input.setText("");
             }
+
         });
 
         layout.add(send);
@@ -159,10 +167,9 @@ public class GameTable extends JFrame{
         }
         return false;
 }
-int getWords(){
-        
-        return words.size();
-}
+    int getWords(){
+            return words.size();
+    }
     int getSiz(){
         return siz;
     }
