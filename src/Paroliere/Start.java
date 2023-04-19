@@ -5,5 +5,6 @@ public class Start {
         GameMenu gameMenu = new GameMenu();
         gameMenu.setVisible(true);
     }
+
 }
 

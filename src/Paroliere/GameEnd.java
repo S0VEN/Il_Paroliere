@@ -15,17 +15,21 @@ public class GameEnd extends JFrame {
     private JButton exitButton;
 
     public GameEnd(int score, int nWordsi, int diff, int size) {
+
+        setIconImage(Toolkit.getDefaultToolkit().getImage("src/Paroliere/icona.jpeg"));
+
+
         getRootPane().setBorder(BorderFactory.createLineBorder(Color.BLACK,5));
         setResizable(false);
         setTitle("Game End");
         LocalDate oggi = LocalDate.now();
         String dataStringa = oggi.toString();
 
+        MySQLConnection o = new MySQLConnection();
+        o.Add(score,nWordsi,diff,size,dataStringa);
 
         setSize(700, 450);
 
-        MySQLConnection o = new MySQLConnection();
-        o.Add(score,nWordsi,diff,size,dataStringa);
         setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
 
         timeUpLabel = new JLabel("Oh no! Time's up!");
@@ -73,6 +77,7 @@ public class GameEnd extends JFrame {
         exitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 System.exit(0);
             }
         });
@@ -87,6 +92,6 @@ public class GameEnd extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
-    }
+}
 
 }

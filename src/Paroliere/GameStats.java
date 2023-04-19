@@ -15,6 +15,8 @@ public class GameStats extends JFrame {
         super("GameStats");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getRootPane().setBorder(BorderFactory.createLineBorder(Color.BLACK,5));
+        setIconImage(Toolkit.getDefaultToolkit().getImage("src/Paroliere/icona.jpeg"));
+
         setResizable(false);
 
         int score = 0;
@@ -117,6 +119,7 @@ public class GameStats extends JFrame {
         public ScorePanel() {
             setLayout(new GridLayout(1, 1));
             setMaximumSize(new Dimension(200, 100));
+
 
             scoreLabel = new JLabel("0");
             scoreLabel.setFont(new Font("Arial", Font.PLAIN, 30));

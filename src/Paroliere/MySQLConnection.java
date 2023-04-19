@@ -27,6 +27,7 @@ public class MySQLConnection extends JFrame {
 
 
 
+
     }
 
     public void Add(int sco, int nWords, int diffi, int size,String date){
@@ -111,6 +112,7 @@ public class MySQLConnection extends JFrame {
         header.setFont(new Font("Arial", Font.BOLD, 12));
         header.setPreferredSize(new Dimension(30, 50));
 
+
 // Applica il renderer a tutte le colonne del JTable
         for (int i = 0; i < table.getColumnCount(); i++) {
             table.getColumnModel().getColumn(i).setCellRenderer(renderer);
@@ -133,8 +135,9 @@ public class MySQLConnection extends JFrame {
         frame.add(scrollPane);
         frame.setSize(800, 450);
         frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
         frame.setResizable(false);
+        frame.setVisible(true);
+
     }
 
     public Connection conne() {

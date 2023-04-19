@@ -16,10 +16,13 @@ import javax.swing.border.*;
 public class GameTable extends JFrame{
     public  static int siz = 0;
     ArrayList<String> words = new ArrayList<String>();
+
     public GameTable(final int size, final int diff){
 
         super("GameTable");
         siz = size;
+        setIconImage(Toolkit.getDefaultToolkit().getImage("src/Paroliere/icona.jpeg"));
+
 
         GameStats gStats = new GameStats(diff,this);
         setBackground(Color.WHITE);

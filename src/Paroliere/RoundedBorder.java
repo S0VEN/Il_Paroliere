@@ -31,6 +31,7 @@ public class RoundedBorder extends AbstractBorder {
         return insets;
     }
 
+
     @Override
     public Insets getBorderInsets(Component c, Insets insets) {
         insets.left = insets.right = insets.bottom = insets.top = thickness;

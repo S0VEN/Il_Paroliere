@@ -12,6 +12,8 @@ public class GameMenu extends JFrame {
     public int diff, siz;
     public GameMenu() {
         setTitle("Il paroliere");
+        ;
+        setIconImage(Toolkit.getDefaultToolkit().getImage("src/Paroliere/icona.jpeg"));
 
         MySQLConnection conn = new MySQLConnection();
         conn.Connection();
@@ -211,6 +213,7 @@ public class GameMenu extends JFrame {
                 conn.Get(model);
             }
         });
+
 
 
         Container contentPane = getContentPane();
