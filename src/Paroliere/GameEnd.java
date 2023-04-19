@@ -55,6 +55,16 @@ public class GameEnd extends JFrame {
                 new Font(Font.SANS_SERIF, Font.BOLD, 40), Color.BLACK));
         scoreLabel.setPreferredSize(scorePanel.getPreferredSize());
 
+        if (score < 500) {
+            scoreLabel.setForeground(Color.GREEN);
+        } else if (score < 1000) {
+            scoreLabel.setForeground(Color.BLUE);
+        } else if (score < 1500) {
+            scoreLabel.setForeground(new Color(148, 0, 211)); // Viola
+        } else {
+            scoreLabel.setForeground(Color.ORANGE);
+        }
+
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout());
         menuButton = new JButton("Menu");
