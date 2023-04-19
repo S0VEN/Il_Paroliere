@@ -3,6 +3,7 @@ package Paroliere;
 import java.awt.*;
 import java.util.ArrayList;
 import javax.swing.*;
+import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
 
 public class GameStats extends JFrame {
@@ -71,32 +72,34 @@ public class GameStats extends JFrame {
         }
     }
 
-    private class TimerPanel extends JPanel {
+    public class TimerPanel extends JPanel {
         private JLabel timerLabel;
         private Timer timer;
         public int count;
 
         public TimerPanel(int diff, GameTable gTable) {
             setPreferredSize(new Dimension(250, 100));
-
             setLayout(new FlowLayout(FlowLayout.CENTER));
 
-            if(diff == 1) count = 120;
+            if (diff == 1) count = 120;
             if (diff == 2) count = 75;
             if (diff == 3) count = 30;
 
             timerLabel = new JLabel("00:00");
+
+            timerLabel.setOpaque(true);
+            timerLabel.setFont(new Font(Font.MONOSPACED, Font.BOLD, 40));
             timerLabel.setBorder(BorderFactory.createCompoundBorder(
-                    BorderFactory.createLineBorder(Color.BLACK, 5),
-                    BorderFactory.createEmptyBorder(5, 10, 5, 10)
+                    BorderFactory.createLineBorder(Color.WHITE, 5),
+                    BorderFactory.createEmptyBorder(10, 20, 10, 20)
             ));
-            timerLabel.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 20));
+
 
             timer = new Timer(1000, e -> {
                 if (count == 0) {
                     dispose();
                     gTable.dispose();
-                    GameEnd gEnd = new GameEnd(score,gTable.getWords(),diff,gTable.getSiz());
+                    GameEnd gEnd = new GameEnd(score, gTable.getWords(), diff, gTable.getSiz());
                     score = 0;
                     timer.stop();
                 } else {
@@ -105,6 +108,9 @@ public class GameStats extends JFrame {
                     int seconds = count % 60;
                     String timeString = String.format("%02d:%02d", minutes, seconds);
                     timerLabel.setText(timeString);
+                    if (count <= 10) {
+                        timerLabel.setForeground(Color.RED);
+                    }else timerLabel.setForeground(Color.BLACK);
                 }
             });
             timer.start();
@@ -113,13 +119,13 @@ public class GameStats extends JFrame {
         }
     }
 
+
     public class ScorePanel extends JPanel {
         private JLabel scoreLabel;
 
         public ScorePanel() {
             setLayout(new GridLayout(1, 1));
             setMaximumSize(new Dimension(200, 100));
-
 
             scoreLabel = new JLabel("0");
             scoreLabel.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -129,7 +135,7 @@ public class GameStats extends JFrame {
             add(scoreLabel);
 
             scoreLabel.setBorder(BorderFactory.createTitledBorder(
-                    BorderFactory.createLineBorder(Color.BLACK, 5), "Score",
+                    BorderFactory.createLineBorder(Color.BLACK, 3), "Score",
                     TitledBorder.CENTER, TitledBorder.TOP,
                     new Font(Font.SANS_SERIF, Font.BOLD, 25), Color.BLACK));
         }
@@ -150,7 +156,7 @@ public class GameStats extends JFrame {
     }
     public class WordListPanel extends JPanel {
         private static JList<String> wordList;
-        private JScrollPane scrollPane;
+        private static JScrollPane scrollPane;
         private static ArrayList<String> words;
 
         public WordListPanel() {
@@ -171,7 +177,7 @@ public class GameStats extends JFrame {
             scrollPane.setBackground(Color.WHITE);
 
             scrollPane.setBorder(BorderFactory.createTitledBorder(
-                    BorderFactory.createLineBorder(Color.BLACK, 5), "Words found",
+                    BorderFactory.createLineBorder(Color.BLACK, 3), " Words found [0] ",
                     TitledBorder.CENTER, TitledBorder.TOP,
                     new Font(Font.SANS_SERIF, Font.BOLD, 20), Color.BLACK));
 
@@ -184,6 +190,13 @@ public class GameStats extends JFrame {
         }
         public static void addWord(String word) {
             words.add(word);
+            scrollPane.setBorder(BorderFactory.createTitledBorder(
+                    BorderFactory.createLineBorder(Color.BLACK, 5), " Words found ["+ words.size() +"] ",
+                    TitledBorder.CENTER, TitledBorder.TOP,
+                    new Font(Font.SANS_SERIF, Font.BOLD, 20), Color.BLACK));
+            scrollPane.setBorder(BorderFactory.createCompoundBorder(
+                    BorderFactory.createEmptyBorder(10, 10, 10, 10),
+                    scrollPane.getBorder()));
             wordList.setListData(words.toArray(new String[0]));
             score = score + checkScore(word);
             scorePanel.updateScore(score);
