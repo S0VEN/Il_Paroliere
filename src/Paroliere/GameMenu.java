@@ -13,8 +13,11 @@ public class GameMenu extends JFrame {
     public int diff, siz;
     public GameMenu() {
         setTitle("Il paroliere");
-
+        ;
         setIconImage(Toolkit.getDefaultToolkit().getImage("src/Paroliere/icona.jpeg"));
+
+        MySQLConnection conn = new MySQLConnection();
+        conn.Connection();
 
         getRootPane().setBorder(BorderFactory.createLineBorder(Color.BLACK,5));
         setResizable(false);
@@ -169,7 +172,6 @@ public class GameMenu extends JFrame {
                     throw new RuntimeException(ex);
                 }
 
-// Aggiungi le colonne al modello
                 for (int i = 1; i <= numCols; i++) {
                     String colName = null;
                     try {
@@ -180,7 +182,6 @@ public class GameMenu extends JFrame {
                     model.addColumn(colName);
                 }
 
-// Aggiungi le righe al modello
                 while (true) {
                     try {
                         if (!rs.next()) break;
@@ -198,7 +199,6 @@ public class GameMenu extends JFrame {
                     model.addRow(row);
                 }
 
-// Chiudi la connessione al database
                 try {
                     rs.close();
                 } catch (SQLException ex) {
@@ -214,8 +214,6 @@ public class GameMenu extends JFrame {
             }
         });
 
-
-
         Container contentPane = getContentPane();
         contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.Y_AXIS));
         contentPane.add(Box.createRigidArea(new Dimension(0, 50)));
@@ -228,10 +226,18 @@ public class GameMenu extends JFrame {
         contentPane.add(buttonPanel);
         contentPane.add(Box.createRigidArea(new Dimension(0, 50)));
 
-        setSize(700, 600);
+        setSize(725, 625);
         setResizable(false);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JPanel footerPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 0, 5));
+        footerPanel.setBackground(Color.WHITE);
+        JLabel footerLabel = new JLabel("©2023 Copyright - Version 3.1", JLabel.CENTER);
+        footerLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        footerPanel.add(footerLabel);
+
+        getContentPane().add(footerPanel, BorderLayout.SOUTH);
 }
 
 
