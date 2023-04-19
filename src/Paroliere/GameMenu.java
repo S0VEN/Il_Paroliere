@@ -13,11 +13,8 @@ public class GameMenu extends JFrame {
     public int diff, siz;
     public GameMenu() {
         setTitle("Il paroliere");
-        ;
-        setIconImage(Toolkit.getDefaultToolkit().getImage("src/Paroliere/icona.jpeg"));
 
-        MySQLConnection conn = new MySQLConnection();
-        conn.Connection();
+        setIconImage(Toolkit.getDefaultToolkit().getImage("src/Paroliere/icona.jpeg"));
 
         getRootPane().setBorder(BorderFactory.createLineBorder(Color.BLACK,5));
         setResizable(false);

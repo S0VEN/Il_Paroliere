@@ -9,10 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="Input attivabile con tasto &quot;Enter&quot;">
+    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="ritocchi al game menu">
+      <change afterPath="$PROJECT_DIR$/src/Paroliere/OIP.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Paroliere/GameMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/GameMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Paroliere/GameStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/GameStats.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Paroliere/GameTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/GameTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -347,7 +347,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681807831898</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="ritocchi al game menu">
+      <created>1681897083083</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1681897083083</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,6 +400,7 @@
     <MESSAGE value="Implementazione meccaniche di gioco come il calcolo del punteggio, aggiunta di tempo in base alla parola trovata e elenco delle parole trovate" />
     <MESSAGE value="Riposizionamento griglia" />
     <MESSAGE value="Ultimi ritocchi alla grafica" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ultimi ritocchi alla grafica" />
+    <MESSAGE value="ritocchi al game menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="ritocchi al game menu" />
   </component>
 </project>

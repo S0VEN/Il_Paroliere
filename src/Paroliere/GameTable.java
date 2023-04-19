@@ -93,10 +93,19 @@ public class GameTable extends JFrame{
         in.add(input);
         layout.add(in);
         JPanel o = new JPanel();
-        JButton send = new JButton("Send");
-        send.setPreferredSize(new Dimension(100, 40));
-        send.setBackground(Color.BLACK);
+        JButton send = new JButton();
+        // Carica l'icona da file
+        ImageIcon icon = new ImageIcon("src/Paroliere/OIP.jpeg");
+
+        Image image = icon.getImage();
+        Image scaledImage = image.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(scaledImage);
+        send.setIcon(scaledIcon);
+        send.setPreferredSize(new Dimension(30, 40));
+        send.setBackground(Color.WHITE);
         send.setForeground(Color.WHITE);
+        send.setBorderPainted(false);
+
         send.setBorder(new RoundedBorder(Color.black, 10,false));
         o.setBackground(Color.white);
         o.setBorder(BorderFactory.createCompoundBorder(
