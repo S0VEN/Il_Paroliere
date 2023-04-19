@@ -110,7 +110,7 @@ public class GameTable extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String in = input.getText();
                 if (in.equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sembra che ' ' non sia una parola!", "Oh oh...", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "It looks like ' ' is not a word!", "Oh oh...", JOptionPane.WARNING_MESSAGE);
 
                 } else {
                     if (isThere(grid, in)) {
@@ -119,13 +119,13 @@ public class GameTable extends JFrame{
                                 words.add(in);
                                 GameStats.WordListPanel.addWord(in);
                             } else {
-                                JOptionPane.showMessageDialog(null, "Sembra che tu abbia già trovato la parola '" + in + "'!", "Oh oh...", JOptionPane.WARNING_MESSAGE);
+                                JOptionPane.showMessageDialog(null, "It looks like you have allready found '" + in + "'!", "Oh oh...", JOptionPane.WARNING_MESSAGE);
                             }
                         } else {
-                            JOptionPane.showMessageDialog(null, "Sembra che la parola '" + in + "' non esista!", "Oh oh...", JOptionPane.WARNING_MESSAGE);
+                            JOptionPane.showMessageDialog(null, "It looks like the word '" + in + "' doesnt exist!", "Oh oh...", JOptionPane.WARNING_MESSAGE);
                         }
                     } else {
-                        JOptionPane.showMessageDialog(null, "Sembra che la parola '" + in + "' non sia presente nella tabella!", "Oh oh...", JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "It looks like the word '" + in + "' is not present in the table!", "Oh oh...", JOptionPane.WARNING_MESSAGE);
                     }
                     input.setText("");
                 }

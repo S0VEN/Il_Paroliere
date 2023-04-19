@@ -9,17 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="Ultimi ritocchi alla grafica">
-      <change afterPath="$PROJECT_DIR$/src/Paroliere/icona.jpeg" afterDir="false" />
+    <list default="true" id="5bab9cde-e696-4822-9324-317aef941d12" name="Changes" comment="Input attivabile con tasto &quot;Enter&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Paroliere/GameEnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/GameEnd.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Paroliere/GameMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/GameMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Paroliere/GameStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/GameStats.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Paroliere/GameTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/GameTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Paroliere/MySQLConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/MySQLConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Paroliere/RoundedBorder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/RoundedBorder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Paroliere/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/Start.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Paroliere/Words.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paroliere/Words.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +29,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -61,25 +54,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/rcomo/eclipse-workspace/Il Paroliere/src/Paroliere",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "advanced.settings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/rcomo/eclipse-workspace/Il Paroliere/src/Paroliere&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Paroliere" />

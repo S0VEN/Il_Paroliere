@@ -136,8 +136,17 @@ public class GameStats extends JFrame {
 
 
         public void updateScore(int score) {
+
             scoreLabel.setText(Integer.toString(score));
-        }
+            if (score < 500) {
+                scoreLabel.setForeground(Color.GREEN);
+            } else if (score < 1000) {
+                scoreLabel.setForeground(Color.BLUE);
+            } else if (score < 1500) {
+                scoreLabel.setForeground(new Color(148, 0, 211)); // Viola
+            } else {
+                scoreLabel.setForeground(Color.ORANGE);
+            }}
     }
     public class WordListPanel extends JPanel {
         private static JList<String> wordList;
@@ -162,7 +171,7 @@ public class GameStats extends JFrame {
             scrollPane.setBackground(Color.WHITE);
 
             scrollPane.setBorder(BorderFactory.createTitledBorder(
-                    BorderFactory.createLineBorder(Color.BLACK, 5), "Parole Trovate",
+                    BorderFactory.createLineBorder(Color.BLACK, 5), "Words found",
                     TitledBorder.CENTER, TitledBorder.TOP,
                     new Font(Font.SANS_SERIF, Font.BOLD, 20), Color.BLACK));
 

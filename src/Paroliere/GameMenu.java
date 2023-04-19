@@ -3,6 +3,7 @@ package Paroliere;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.InputStream;
 import java.sql.*;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -21,12 +22,12 @@ public class GameMenu extends JFrame {
         getRootPane().setBorder(BorderFactory.createLineBorder(Color.BLACK,5));
         setResizable(false);
         getContentPane().setBackground(Color.WHITE);
-
         JPanel titlePanel = new JPanel();
         titlePanel.setBackground(Color.WHITE);
-        JLabel titleLabel = new JLabel("IL PAROLIERE");
-        titleLabel.setFont(new Font("Arial", Font.BOLD, 50));
-        titlePanel.setMaximumSize(new Dimension(700,250));
+        ImageIcon icon = new ImageIcon("src/Paroliere/icona.jpeg");
+        JLabel titleLabel = new JLabel("<html>&nbsp&nbsp<i><s>SCRABBLE </s></i></html>",icon,JLabel.LEFT);
+        titleLabel.setFont(new Font("Tahoma", Font.BOLD, 50));
+        titlePanel.setMaximumSize(new Dimension(710,250));
         titlePanel.add(titleLabel);
 
         JPanel difficultyPanel = new JPanel();
@@ -35,23 +36,23 @@ public class GameMenu extends JFrame {
         difficultyPanel.setBorder(BorderFactory.createTitledBorder(
                 BorderFactory.createLineBorder(Color.BLACK, 5), "Difficulty",
                 TitledBorder.CENTER, TitledBorder.TOP,
-                new Font(Font.SANS_SERIF, Font.BOLD, 30), Color.BLACK));
+                new Font("Tahoma", Font.BOLD, 30), Color.BLACK));
 
 
         ButtonGroup difficultyGroup = new ButtonGroup();
         JRadioButton easyRadioButton = new JRadioButton("Easy");
-        easyRadioButton.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 15));
+        easyRadioButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
         easyRadioButton.setPreferredSize(new Dimension(100, 25));
         easyRadioButton.setBackground(Color.WHITE);
 
         JRadioButton mediumRadioButton = new JRadioButton("Normal");
-        mediumRadioButton.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 15));
+        mediumRadioButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
         mediumRadioButton.setPreferredSize(new Dimension(100, 25));
         mediumRadioButton.setBackground(Color.WHITE);
 
 
         JRadioButton hardRadioButton = new JRadioButton("Hard");
-        hardRadioButton.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 15));
+        hardRadioButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
         hardRadioButton.setPreferredSize(new Dimension(100, 25));
         hardRadioButton.setBackground(Color.WHITE);
 
@@ -77,17 +78,17 @@ public class GameMenu extends JFrame {
         sizePanel.setBorder(BorderFactory.createTitledBorder(
                 BorderFactory.createLineBorder(Color.BLACK, 5), "Size",
                 TitledBorder.CENTER, TitledBorder.TOP,
-                new Font(Font.SANS_SERIF, Font.BOLD, 30), Color.BLACK));
+                new Font("Tahoma", Font.BOLD, 30), Color.BLACK));
 
         ButtonGroup sizeGroup = new ButtonGroup();
 
         JRadioButton smallRadioButton = new JRadioButton("5x5");
-        smallRadioButton.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 15));
+        smallRadioButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
         smallRadioButton.setPreferredSize(new Dimension(100, 25));
         smallRadioButton.setBackground(Color.WHITE);
 
         JRadioButton mediumSizeRadioButton = new JRadioButton("10x10");
-        mediumSizeRadioButton.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 15));
+        mediumSizeRadioButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
         mediumSizeRadioButton.setPreferredSize(new Dimension(100, 25));
         mediumSizeRadioButton.setBackground(Color.WHITE);
 
@@ -105,8 +106,10 @@ public class GameMenu extends JFrame {
 
         JPanel buttonPanel = new JPanel();
         buttonPanel.setBackground(Color.WHITE);
-        JButton startButton = new JButton("Start");
-        JButton statsButton = new JButton("Stats");
+        JButton startButton = new JButton("START");
+        JButton statsButton = new JButton("STATS");
+        startButton.setFont(new Font("Tahoma",Font.BOLD + Font.ITALIC,23));
+        statsButton.setFont(new Font("Tahoma",Font.BOLD+ Font.ITALIC,23));
         startButton.setBackground(Color.BLACK);
         startButton.setForeground(Color.WHITE);
         statsButton.setBackground(Color.BLACK);
