@@ -15,19 +15,18 @@ import java.sql.SQLException;
 
 public class MySQLConnection extends JFrame {
 
-    public void Connection() {
+    public Connection Connection() {
         Connection conn = null;
         try {
             // Connessione al database
             conn = DriverManager.getConnection("jdbc:mariadb://172.22.201.51:3306/Paroliere_GPO_Como","utentedb","Cobi_2022_$");
             System.out.println("Connessione al database avvenuta con successo.");
+            return conn;
         } catch (SQLException e) {
             System.out.println("Errore di connessione al database: " + e.getMessage());
+
         }
-
-
-
-
+        return conn;
     }
 
     public void Add(int sco, int nWords, int diffi, int size,String date){

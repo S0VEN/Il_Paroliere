@@ -16,8 +16,6 @@ public class GameMenu extends JFrame {
         ;
         setIconImage(Toolkit.getDefaultToolkit().getImage("src/Paroliere/icona.jpeg"));
 
-        MySQLConnection conn = new MySQLConnection();
-        conn.Connection();
 
         getRootPane().setBorder(BorderFactory.createLineBorder(Color.BLACK,5));
         setResizable(false);
@@ -143,74 +141,79 @@ public class GameMenu extends JFrame {
         statsButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 MySQLConnection conn = new MySQLConnection();
-                conn.Connection();
-                String query = "SELECT * FROM Stats";
 
-                DefaultTableModel model = new DefaultTableModel();
-                Statement stmt = null;
-                try {
-                    stmt = conn.conne().createStatement();
-                } catch (SQLException ex) {
-                    throw new RuntimeException(ex);
-                }
-                ResultSet rs = null;
-                try {
-                    rs = stmt.executeQuery(query);
-                } catch (SQLException ex) {
-                    throw new RuntimeException(ex);
-                }
-                ResultSetMetaData meta = null;
-                try {
-                    meta = rs.getMetaData();
-                } catch (SQLException ex) {
-                    throw new RuntimeException(ex);
-                }
-                int numCols = 0;
-                try {
-                    numCols = meta.getColumnCount();
-                } catch (SQLException ex) {
-                    throw new RuntimeException(ex);
-                }
+                if (conn.Connection()==null) {
+                    JOptionPane.showMessageDialog(null, "It seems that the attempt to connect to the database has failed. \n Cant access to the matches history", "Database Error", JOptionPane.ERROR_MESSAGE);
 
-                for (int i = 1; i <= numCols; i++) {
-                    String colName = null;
+                } else {
+                    String query = "SELECT * FROM Stats";
+
+                    DefaultTableModel model = new DefaultTableModel();
+                    Statement stmt = null;
                     try {
-                        colName = meta.getColumnName(i);
+                        stmt = conn.conne().createStatement();
                     } catch (SQLException ex) {
                         throw new RuntimeException(ex);
                     }
-                    model.addColumn(colName);
-                }
-
-                while (true) {
+                    ResultSet rs = null;
                     try {
-                        if (!rs.next()) break;
+                        rs = stmt.executeQuery(query);
                     } catch (SQLException ex) {
                         throw new RuntimeException(ex);
                     }
-                    Object[] row = new Object[numCols];
+                    ResultSetMetaData meta = null;
+                    try {
+                        meta = rs.getMetaData();
+                    } catch (SQLException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                    int numCols = 0;
+                    try {
+                        numCols = meta.getColumnCount();
+                    } catch (SQLException ex) {
+                        throw new RuntimeException(ex);
+                    }
+
                     for (int i = 1; i <= numCols; i++) {
+                        String colName = null;
                         try {
-                            row[i - 1] = rs.getObject(i);
+                            colName = meta.getColumnName(i);
                         } catch (SQLException ex) {
                             throw new RuntimeException(ex);
                         }
+                        model.addColumn(colName);
                     }
-                    model.addRow(row);
-                }
 
-                try {
-                    rs.close();
-                } catch (SQLException ex) {
-                    throw new RuntimeException(ex);
-                }
-                try {
-                    stmt.close();
-                } catch (SQLException ex) {
-                    throw new RuntimeException(ex);
-                }
+                    while (true) {
+                        try {
+                            if (!rs.next()) break;
+                        } catch (SQLException ex) {
+                            throw new RuntimeException(ex);
+                        }
+                        Object[] row = new Object[numCols];
+                        for (int i = 1; i <= numCols; i++) {
+                            try {
+                                row[i - 1] = rs.getObject(i);
+                            } catch (SQLException ex) {
+                                throw new RuntimeException(ex);
+                            }
+                        }
+                        model.addRow(row);
+                    }
 
-                conn.Get(model);
+                    try {
+                        rs.close();
+                    } catch (SQLException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                    try {
+                        stmt.close();
+                    } catch (SQLException ex) {
+                        throw new RuntimeException(ex);
+                    }
+
+                    conn.Get(model);
+                }
             }
         });
 
@@ -233,7 +236,7 @@ public class GameMenu extends JFrame {
 
         JPanel footerPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 0, 5));
         footerPanel.setBackground(Color.WHITE);
-        JLabel footerLabel = new JLabel("©2023 Copyright - Version 3.1", JLabel.CENTER);
+        JLabel footerLabel = new JLabel("©2023 Copyright R.C.L. - Version 3.1", JLabel.CENTER);
         footerLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
         footerPanel.add(footerLabel);
 
