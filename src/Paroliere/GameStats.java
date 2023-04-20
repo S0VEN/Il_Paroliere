@@ -10,7 +10,7 @@ public class GameStats extends JFrame {
     public static int score = 0;
     public static TimerPanel timerPanel;
     public static ScorePanel scorePanel;
-    public WordListPanel wordListPanel;
+    public static WordListPanel wordListPanel;
 
     public GameStats(int diff, GameTable gTable) {
         super("GameStats");
@@ -81,8 +81,8 @@ public class GameStats extends JFrame {
             setPreferredSize(new Dimension(250, 100));
             setLayout(new FlowLayout(FlowLayout.CENTER));
 
-            if (diff == 1) count = 120;
-            if (diff == 2) count = 75;
+            if (diff == 1) count = 90;
+            if (diff == 2) count = 60;
             if (diff == 3) count = 30;
 
             timerLabel = new JLabel("00:00");
@@ -201,6 +201,12 @@ public class GameStats extends JFrame {
             score = score + checkScore(word);
             scorePanel.updateScore(score);
             timerPanel.count = timerPanel.count + (word.length() * 3);
+        }
+
+        public static void wrongWord(String word, int m){
+            int t = timerPanel.count - (word.length() * m);
+            if (t < 0) t = 0;
+            timerPanel.count = t;
         }
     }
 

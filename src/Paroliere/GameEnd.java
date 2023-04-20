@@ -28,7 +28,7 @@ public class GameEnd extends JFrame {
         MySQLConnection o = new MySQLConnection();
 
         if(o.Connection()==null){
-            JOptionPane.showMessageDialog(null, "It seems that the attempt to connect to the database has failed. \n Your match will not be recorded", "Database Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Looks like the attempt to connect to the database has failed. \n Your match will not be recorded.", "Database Error", JOptionPane.ERROR_MESSAGE);
 
         }else{
 
@@ -73,7 +73,7 @@ public class GameEnd extends JFrame {
         } else if (score < 1500) {
             scoreLabel.setForeground(new Color(148, 0, 211)); // Viola
         } else {
-            scoreLabel.setForeground(Color.ORANGE);
+            scoreLabel.setForeground(Color.ORANGE); 
         }
 
         JPanel buttonPanel = new JPanel();

@@ -143,7 +143,7 @@ public class GameMenu extends JFrame {
                 MySQLConnection conn = new MySQLConnection();
 
                 if (conn.Connection()==null) {
-                    JOptionPane.showMessageDialog(null, "It seems that the attempt to connect to the database has failed. \n Cant access to the matches history", "Database Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Looks like the attempt to connect to the database has failed. \n Unable to access the matches history.", "Database Error", JOptionPane.ERROR_MESSAGE);
 
                 } else {
                     String query = "SELECT * FROM Stats";
@@ -236,7 +236,7 @@ public class GameMenu extends JFrame {
 
         JPanel footerPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 0, 5));
         footerPanel.setBackground(Color.WHITE);
-        JLabel footerLabel = new JLabel("©2023 Copyright R.C.L. - Version 3.1", JLabel.CENTER);
+        JLabel footerLabel = new JLabel("©2023 Copyright R.C.L. - Version 3.2", JLabel.CENTER);
         footerLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
         footerPanel.add(footerLabel);
 

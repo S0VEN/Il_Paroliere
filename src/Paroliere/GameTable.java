@@ -81,6 +81,8 @@ public class GameTable extends JFrame{
         input.setBorder(new RoundedBorder(Color.black, 10,true));
         input.setHorizontalAlignment(SwingConstants.CENTER);
         input.setFont(new Font("Arial", Font.BOLD, 16));
+        input.setDocument(new JTextFieldLimit(size));
+
         in.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createLineBorder(Color.white, 0),
                 BorderFactory.createEmptyBorder(30, 10, 3, 0)
@@ -94,7 +96,6 @@ public class GameTable extends JFrame{
         layout.add(in);
         JPanel o = new JPanel();
         JButton send = new JButton();
-        // Carica l'icona da file
         ImageIcon icon = new ImageIcon("src/Paroliere/OIP.jpeg");
 
         Image image = icon.getImage();
@@ -129,11 +130,14 @@ public class GameTable extends JFrame{
                                 GameStats.WordListPanel.addWord(in);
                             } else {
                                 JOptionPane.showMessageDialog(null, "It looks like you have allready found '" + in + "'!", "Oh oh...", JOptionPane.WARNING_MESSAGE);
+                                GameStats.WordListPanel.wrongWord(in,diff-1);
                             }
                         } else {
                             JOptionPane.showMessageDialog(null, "It looks like the word '" + in + "' doesnt exist!", "Oh oh...", JOptionPane.WARNING_MESSAGE);
+                            GameStats.WordListPanel.wrongWord(in,diff-1);
                         }
                     } else {
+                        GameStats.WordListPanel.wrongWord(in,diff-1);
                         JOptionPane.showMessageDialog(null, "It looks like the word '" + in + "' is not present in the table!", "Oh oh...", JOptionPane.WARNING_MESSAGE);
                     }
                     input.setText("");
