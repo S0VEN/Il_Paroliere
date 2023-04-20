@@ -217,6 +217,7 @@ public class GameMenu extends JFrame {
             }
         });
 
+
         Container contentPane = getContentPane();
         contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.Y_AXIS));
         contentPane.add(Box.createRigidArea(new Dimension(0, 50)));
