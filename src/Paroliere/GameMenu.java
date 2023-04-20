@@ -236,7 +236,7 @@ public class GameMenu extends JFrame {
 
         JPanel footerPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 0, 5));
         footerPanel.setBackground(Color.WHITE);
-        JLabel footerLabel = new JLabel("©2023 Copyright R.C.L. - Version 3.2", JLabel.CENTER);
+        JLabel footerLabel = new JLabel("©2023 Copyright R.C.L. - Version 3.4", JLabel.CENTER);
         footerLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
         footerPanel.add(footerLabel);
 
